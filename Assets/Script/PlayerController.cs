@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
     {
         _slashEffect = Instantiate(_slashEffect, _attackTransform);
         _slashEffect.transform.eulerAngles = new Vector3(0, 0, _effectAngle);
-        _slashEffect.transform.localScale = new Vector2(_attackTransform.localScale.x,  _attackTransform.localScale.y);
+        //_slashEffect.transform.localScale = new Vector2(_attackTransform.localScale.x,  _attackTransform.localScale.y);
     }
 
     void Recoil()
