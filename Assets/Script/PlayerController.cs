@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private float timeSinceAttack;
     [SerializeField] float damage;
     [SerializeField] GameObject slashEffect;
+    [SerializeField] GameObject enemyHitEffect;
     [Space(5)]
 
     [Header("Recoil")]
@@ -192,19 +193,33 @@ public class PlayerController : MonoBehaviour
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
         List<Enemy> hitEnemies = new List<Enemy>();
 
+        bool hitEnemy = false;
+
         if (objectsToHit.Length > 0)
         {
             _recoilDir = true;
         }
 
-        for(int i = 0; i < objectsToHit.Length; i++)
+        for (int i = 0; i < objectsToHit.Length; i++)
         {
             Enemy e = objectsToHit[i].GetComponent<Enemy>();
-            if(e && !hitEnemies.Contains(e))
+
+            if (e && !hitEnemies.Contains(e))
             {
-                e.EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrenght);
+                e.EnemyHit(
+                    damage,
+                    (transform.position - objectsToHit[i].transform.position).normalized,
+                    _recoilStrenght
+                );
+
                 hitEnemies.Add(e);
+                hitEnemy = true; 
             }
+        }
+
+        if (hitEnemy && enemyHitEffect != null)
+        {
+            Instantiate(enemyHitEffect, _attackTransform.position, Quaternion.identity);
         }
     }
 
