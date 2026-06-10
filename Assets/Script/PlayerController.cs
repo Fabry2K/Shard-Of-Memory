@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     public int health;
     public int maxHealth;
     [SerializeField] GameObject bloodSpurt;
+    [SerializeField] float bloodOffsetY = 0.3f;
     [SerializeField] float hitFlashSpeed;
     public delegate void OnHealthChangedDelegate();
     [HideInInspector] public OnHealthChangedDelegate onHealthChangedCallback;
@@ -74,17 +75,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float manaGain;
     [Space(5)]
 
-    [Header("Spell Casting")]
+    [Header("Spell Settings")]
     [SerializeField] float manaSpellCost = 0.3f;
     [SerializeField] float timeBetweenCast = 0.5f;
-    float timeSinceCast;
-
     [SerializeField] float spellDamage;
     [SerializeField] float downSpellForce;
 
     [SerializeField] GameObject sideSpellFireball;
     [SerializeField] GameObject upSpellExplosion;
     [SerializeField] GameObject downSpellFireball;
+
+    float timeSinceCast;
     [Space(5)]
 
     [HideInInspector] public PlayerStateList pState;
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
         } else {
             Instance = this;
         }
-        Health = maxHealth;
+        DontDestroyOnLoad(gameObject);
 }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
         Mana = mana;
         manaStorage.fillAmount = Mana;
+        Health = maxHealth;
     }
 
     private void OnDrawGizmos()
@@ -142,6 +144,7 @@ public class PlayerController : MonoBehaviour
         Move();
         Heal();
         CastSpell();
+
 
         if (pState.healing) return;
         Flip();
@@ -215,7 +218,8 @@ public class PlayerController : MonoBehaviour
         pState.dashing = true;
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
-        rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+        int _dir = pState.lookingRight ? 1 : -1;
+        rb.linearVelocity = new Vector2(_dir * dashSpeed, 0);
         if (Grounded()) Instantiate(dashEffect, transform);
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = gravity;
@@ -374,7 +378,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator StopTakingDamage()
     {
         pState.invincible = true;
-        GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, DownAttackTransform.position, Quaternion.identity);
+        GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, DownAttackTransform.position + Vector3.up * bloodOffsetY, Quaternion.identity);
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("TakeDamage");
         yield return new WaitForSeconds(1f);
@@ -553,27 +557,27 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
+
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !pState.jumping)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
+            pState.jumping = true;
+        }
+        
+        if (!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+        {
+            pState.jumping = true;
+            airJumpCounter++;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 3)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             pState.jumping = false;
         }
 
-        if (!pState.jumping)
-        {
-            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
-            {
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
-                pState.jumping = true;
-            } else if(!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
-            {
-                pState.jumping = true;
-                airJumpCounter++;
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
-            }
-
-            anim.SetBool("Jumping", !Grounded());
-        }
+        anim.SetBool("Jumping", !Grounded());
     }
 
     void UpdateJumpVariables()
