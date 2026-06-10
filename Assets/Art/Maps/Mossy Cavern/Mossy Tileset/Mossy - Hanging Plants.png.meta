@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,10 +99,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -143,12 +143,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 1649
-        width: 365
-        height: 1179
+        x: 113
+        y: 1650
+        width: 363
+        height: 1177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_1
       rect:
         serializedVersion: 2
-        x: 516
-        y: 1856
-        width: 365
-        height: 978
+        x: 517
+        y: 1857
+        width: 363
+        height: 976
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_2
       rect:
         serializedVersion: 2
-        x: 912
-        y: 1852
-        width: 364
-        height: 978
+        x: 913
+        y: 1853
+        width: 362
+        height: 976
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_3
       rect:
         serializedVersion: 2
-        x: 1307
-        y: 2010
-        width: 306
-        height: 822
+        x: 1308
+        y: 2011
+        width: 304
+        height: 820
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_4
       rect:
         serializedVersion: 2
-        x: 1667
-        y: 1894
-        width: 269
-        height: 951
+        x: 1668
+        y: 1895
+        width: 267
+        height: 949
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,12 +253,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_5
       rect:
         serializedVersion: 2
-        x: 88
-        y: 172
-        width: 468
-        height: 1377
+        x: 89
+        y: 173
+        width: 466
+        height: 1375
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,12 +275,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_6
       rect:
         serializedVersion: 2
-        x: 716
-        y: 172
-        width: 468
-        height: 1377
+        x: 717
+        y: 173
+        width: 466
+        height: 1375
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -297,12 +297,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_7
       rect:
         serializedVersion: 2
-        x: 1178
-        y: 1318
-        width: 761
-        height: 511
+        x: 1179
+        y: 1319
+        width: 759
+        height: 509
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -319,12 +319,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_8
       rect:
         serializedVersion: 2
-        x: 1224
-        y: 712
-        width: 761
-        height: 511
+        x: 1225
+        y: 713
+        width: 759
+        height: 509
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -341,12 +341,12 @@ TextureImporter:
       name: Mossy - Hanging Plants_9
       rect:
         serializedVersion: 2
-        x: 1222
-        y: 84
-        width: 761
-        height: 511
+        x: 1223
+        y: 85
+        width: 759
+        height: 509
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -363,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8f22c1f6170892c4cb0421511e27ceb0
     internalID: 0
     vertices: []
     indices: 
@@ -371,7 +371,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Mossy - Hanging Plants_0: -6297841393305379348
       Mossy - Hanging Plants_1: -9120406111138420596
