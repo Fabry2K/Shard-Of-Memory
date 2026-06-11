@@ -1,16 +1,35 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    [SerializeField] private string transitionTo;
+    [SerializeField] Transform startPoint;
+    [SerializeField] private Vector2 exitDirection;
+    [SerializeField] private float exitTime;
+
+    private void Start()
     {
-        
+        if(transitionTo == GameManager.Instance.transitionedFromScene)
+        {
+            PlayerController.Instance.transform.position = startPoint.position;
+
+            StartCoroutine(PlayerController.Instance.WalkIntoNewScene(exitDirection, exitTime));
+        }
+        StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.Out));
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D _other)
     {
-        
+        if (_other.CompareTag("Player"))
+        {
+            GameManager.Instance.transitionedFromScene = SceneManager.GetActiveScene().name;
+
+            PlayerController.Instance.pState.cutScene = true;
+            PlayerController.Instance.pState.invincible = true;
+
+            StartCoroutine(UIManager.Instance.sceneFader.FadeAndLoadScene(SceneFader.FadeDirection.In, transitionTo));
+        }
     }
 }

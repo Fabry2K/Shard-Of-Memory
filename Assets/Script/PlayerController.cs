@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
     private bool canDash;
     private bool dashed;
     private SpriteRenderer sr;
+    private bool canFlash = true;
 
 
     public static PlayerController Instance;
@@ -109,7 +110,7 @@ public class PlayerController : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
-}
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -136,6 +137,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pState.cutScene) return;
+
         GetInputs();
         UpdateJumpVariables();
         if (pState.dashing) return;
@@ -155,6 +158,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (pState.cutScene) return;
         if (pState.dashing) return;
         Recoil();
     }
@@ -226,6 +230,25 @@ public class PlayerController : MonoBehaviour
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public IEnumerator WalkIntoNewScene(Vector2 _exitDir, float _delay)
+    {
+        pState.invincible = true;
+        if(_exitDir.y > 0)
+        {
+            rb.linearVelocity = jumpForce * _exitDir;
+        }
+        if(_exitDir.x != 0)
+        {
+            xAxis = _exitDir.x > 0 ? 1 : -1;
+            Move();
+        }
+
+        Flip();
+        yield return new WaitForSeconds(_delay);
+        pState.invincible = false;
+        pState.cutScene = false;
     }
 
     public void Attack()
@@ -385,10 +408,26 @@ public class PlayerController : MonoBehaviour
         pState.invincible = false;
     }
 
+    IEnumerator Flash()
+    {
+        sr.enabled = !sr.enabled;
+        canFlash = false;
+        yield return new WaitForSeconds(0.1f);
+        canFlash = true;
+    }
+
     void FlashWhileInvincible()
     {
-        sr.material.color = pState.invincible ? 
-            Color.Lerp(Color.white, Color.black, Mathf.PingPong(Time.time * hitFlashSpeed, 1.0f)) : Color.white;
+        if (pState.invincible && !pState.cutScene)
+        {
+            if (Time.timeScale > 0.2 && canFlash)
+            {
+                StartCoroutine(Flash());
+            }
+        } else
+        {
+            sr.enabled = true;
+        }
     }
 
     void RestoreTimeScale()
