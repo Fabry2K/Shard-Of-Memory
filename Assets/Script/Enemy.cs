@@ -105,6 +105,10 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
 
-        Destroy(gameObject, 1f);
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }
