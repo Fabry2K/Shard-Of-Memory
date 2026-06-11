@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     protected float recoilTimer;
     protected Rigidbody2D rb;
 
+    protected Animator anim;
+    protected bool isDead;
+
     protected enum EnemyStates
     {
         //skeleton
@@ -28,6 +31,8 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.Instance;
+        anim = GetComponentInChildren<Animator>();
+        Debug.Log(anim);
     }
 
     // Update is called once per frame
@@ -37,7 +42,8 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Die();
         }
 
         if (isRecoiling)
@@ -86,5 +92,19 @@ public class Enemy : MonoBehaviour
     protected virtual void Attack()
     {
         PlayerController.Instance.TakeDamage(damage);
+    }
+
+    protected virtual void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        anim.SetTrigger("Die");
+
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false;
+
+        Destroy(gameObject, 1f);
     }
 }
