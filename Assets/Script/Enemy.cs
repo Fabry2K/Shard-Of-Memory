@@ -63,6 +63,8 @@ public class Enemy : MonoBehaviour
     {
         health -= _damageDone;
 
+        anim.SetTrigger("Hit");
+
         if (!isRecoiling)
         {
             rb.AddForce(-_hitForce * recoilFactor * _hitDirection);
@@ -111,4 +113,6 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
 }

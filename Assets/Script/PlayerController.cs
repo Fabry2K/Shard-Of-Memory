@@ -573,6 +573,7 @@ public class PlayerController : MonoBehaviour
         else if (yAxis < 0 && !Grounded())
         {
             downSpellFireball.SetActive(true);
+            SetSorting(downSpellFireball, "Midground", 10);
         }
 
         Mana -= manaSpellCost;
@@ -637,6 +638,17 @@ public class PlayerController : MonoBehaviour
         } else
         {
             jumpBufferCounter--;
+        }
+    }
+
+    void SetSorting(GameObject obj, string layerName, int order)
+    {
+        SpriteRenderer[] renderers = obj.GetComponentsInChildren<SpriteRenderer>();
+
+        foreach (SpriteRenderer sr in renderers)
+        {
+            sr.sortingLayerName = layerName;
+            sr.sortingOrder = order;
         }
     }
 }
