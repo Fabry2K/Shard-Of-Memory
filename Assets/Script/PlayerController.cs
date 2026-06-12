@@ -297,6 +297,11 @@ public class PlayerController : MonoBehaviour
                 objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, _recoilDir, _recoilStrenght);
 
 
+                if (_recoilDir == Vector2.down)
+                {
+                    airJumpCounter = 0;
+                }
+
                 if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
