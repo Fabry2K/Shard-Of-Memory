@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Skeleton : Enemy
 {
-    float timer;
+    float flipTimer;
+    float maxTimer;
 
     [SerializeField] private float flipWaitTime;
+    [SerializeField] private float walkMaxTime;
     [SerializeField] private float ledgeCheckX;
     [SerializeField] private float ledgeCheckY;
     [SerializeField] private LayerMask whatIsGround;
@@ -25,6 +27,15 @@ public class Skeleton : Enemy
         switch (currentEnemyState)
         {
             case EnemyStates.Skeleton_Idle:
+
+                maxTimer += Time.deltaTime;
+
+                if (maxTimer > walkMaxTime)
+                {
+                    maxTimer = 0;
+                    ChangeState(EnemyStates.Skeleton_Flip);
+                }
+
                 Vector3 _ledgeCheckStart = transform.localScale.x > 0 ? new Vector3(ledgeCheckX, 0) : new Vector3(-ledgeCheckX, 0);
                 Vector2 _wallCheckDir = transform.localScale.x > 0 ? transform.right : -transform.right;
 
@@ -48,14 +59,16 @@ public class Skeleton : Enemy
                 {
                     rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
                 }
+
+
                 break;
 
             case EnemyStates.Skeleton_Flip:
-                timer += Time.deltaTime;
+                flipTimer += Time.deltaTime;
 
-                if(timer > flipWaitTime)
+                if(flipTimer > flipWaitTime)
                 {
-                    timer = 0;
+                    flipTimer = 0;
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
                     ChangeState(EnemyStates.Skeleton_Idle);
                 }

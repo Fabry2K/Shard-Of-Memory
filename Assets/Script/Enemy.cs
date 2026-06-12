@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         //skeleton
         Skeleton_Idle,
+        Skeleton_Walk,
         Skeleton_Flip,
         Skeleton_Attack
     }
