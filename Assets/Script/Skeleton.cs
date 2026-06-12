@@ -9,6 +9,9 @@ public class Skeleton : Enemy
     [SerializeField] private float ledgeCheckY;
     [SerializeField] private LayerMask whatIsGround;
 
+    private bool canHit = false;
+    private bool hitted = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
@@ -31,6 +34,12 @@ public class Skeleton : Enemy
                     ChangeState(EnemyStates.Skeleton_Flip);
                 }
 
+                anim.SetBool("HasTarget", attackZone.detectedColliders.Count > 0);
+                if (anim.GetBool("HasTarget"))
+                {
+                    ChangeState(EnemyStates.Skeleton_Attack);
+                }
+
 
                 if (transform.localScale.x > 0)
                 {
@@ -51,7 +60,39 @@ public class Skeleton : Enemy
                     ChangeState(EnemyStates.Skeleton_Idle);
                 }
                 break;
+
+            case EnemyStates.Skeleton_Attack:
+
+                anim.SetBool("HasTarget", attackZone.detectedColliders.Count > 0);
+
+                rb.linearVelocity = Vector2.zero;
+
+                if (canHit && !hitted && anim.GetBool("HasTarget"))
+                {
+                    hitted = true;
+                    DealDamage();
+                }
+
+
+                break;
         }
+    }
+
+    protected void EnableHit()
+    {
+        canHit = true;
+    }
+
+    protected void DisableHit()
+    {
+        canHit = false;
+    }
+
+    protected void EndAttack()
+    {
+        hitted = false;
+        canHit = false;
+        ChangeState(EnemyStates.Skeleton_Idle);
     }
 
 }

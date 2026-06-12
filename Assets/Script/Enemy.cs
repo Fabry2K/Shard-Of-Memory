@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed;
 
     [SerializeField] protected float damage;
+    [SerializeField] protected DetectionBox attackZone;
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
@@ -22,7 +23,8 @@ public class Enemy : MonoBehaviour
     {
         //skeleton
         Skeleton_Idle,
-        Skeleton_Flip
+        Skeleton_Flip,
+        Skeleton_Attack
     }
     protected EnemyStates currentEnemyState;
 
@@ -32,13 +34,14 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.Instance;
         anim = GetComponentInChildren<Animator>();
-        Debug.Log(anim);
     }
+
 
     // Update is called once per frame
     protected virtual void Update()
     {
         UpdateEnemyStates();
+
 
         if(health <= 0)
         {
@@ -76,7 +79,7 @@ public class Enemy : MonoBehaviour
     {
         if (_other.gameObject.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
         {
-            Attack();
+            DealDamage();
             PlayerController.Instance.HitStopTime(0, 5, 0.3f);
         }
     }
@@ -91,7 +94,7 @@ public class Enemy : MonoBehaviour
         currentEnemyState = _newState;
     }
 
-    protected virtual void Attack()
+    protected virtual void DealDamage()
     {
         PlayerController.Instance.TakeDamage(damage);
     }
@@ -113,6 +116,7 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 
 
 }
