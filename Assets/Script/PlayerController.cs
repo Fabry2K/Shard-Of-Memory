@@ -261,65 +261,53 @@ public class PlayerController : MonoBehaviour
 
             if(yAxis == 0 || yAxis < 0 && Grounded())
             {
-                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
+                int _recoilLeftOnRight = pState.lookingRight ? 1 : -1;
+
+                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, Vector2.right * _recoilLeftOnRight, recoilXSpeed);
                 Instantiate(slashEffect, SideAttackTransform);
             } else if (yAxis > 0)
             {
-                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed);
+                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, Vector2.up, recoilYSpeed);
                 SlashEffectAtAngle(slashEffect, 80, UpAttackTransform);
             }
             else if (yAxis < 0 && !Grounded())
             {
-                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
+                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, Vector2.down, recoilYSpeed);
                 SlashEffectAtAngle(slashEffect, -90, DownAttackTransform);
             }
         }
     }
 
-    public void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrenght)
+    public void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilBool, Vector2 _recoilDir, float _recoilStrenght)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
         List<Enemy> hitEnemies = new List<Enemy>();
 
-        bool hitEnemy = false;
+        
 
         if (objectsToHit.Length > 0)
         {
-            _recoilDir = true;
+            _recoilBool = true;
         }
 
         for (int i = 0; i < objectsToHit.Length; i++)
         {
-            Enemy e = objectsToHit[i].GetComponent<Enemy>();
+            if (objectsToHit[i].GetComponent<Enemy>() != null) {
 
-            if (e && !hitEnemies.Contains(e))
-            {
-                e.EnemyHit(
-                    damage,
-                    (transform.position - objectsToHit[i].transform.position).normalized,
-                    _recoilStrenght
-                );
+                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, _recoilDir, _recoilStrenght);
+
 
                 if (objectsToHit[i].CompareTag("Enemy"))
                 {
                     Mana += manaGain;
 
-                    //if (enemyHitEffect != null)
-                    //{
-                    //Instantiate(enemyHitEffect, _attackTransform.position, Quaternion.identity);
-                    //}
-
-                    hitEnemies.Add(e);
-                    hitEnemy = true;
+                    Instantiate(enemyHitEffect, _attackTransform.position, Quaternion.identity);
                 }
             }
-        }
-
-        if (hitEnemy && enemyHitEffect != null)
-        {
-            Instantiate(enemyHitEffect, _attackTransform.position, Quaternion.identity);
+            
         }
     }
+
 
     void SlashEffectAtAngle(GameObject _slashEffect, int _effectAngle, Transform _attackTransform)
     {

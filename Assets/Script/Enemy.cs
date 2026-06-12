@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 
      float recoilTimer;
     protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
 
     protected Animator anim;
     protected bool isDead;
@@ -27,7 +28,12 @@ public class Enemy : MonoBehaviour
         Skeleton_Chasing,
         Skeleton_Flip,
         Skeleton_Attack,
-        Skeleton_BackToOriginalPosition
+        Skeleton_BackToOriginalPosition,
+
+        //bat
+        Bat_Idle,
+        Bat_Chasing,
+        Bat_Stunned
     }
 
     protected EnemyStates currentEnemyState;
@@ -36,6 +42,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         player = PlayerController.Instance;
         anim = GetComponentInChildren<Animator>();
     }
@@ -44,10 +51,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+
         UpdateEnemyStates();
 
-
-        if(health <= 0)
+        if (health <= 0)
         {
             //Destroy(gameObject);
             Die();
@@ -69,6 +76,12 @@ public class Enemy : MonoBehaviour
     public virtual void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
         health -= _damageDone;
+
+
+        if (!isRecoiling)
+        {
+            rb.linearVelocity = _hitForce * recoilFactor * _hitDirection;
+        }
 
         GameObject _blood = Instantiate(blood, transform.position, Quaternion.identity);
         DestroyObject(_blood, 5.5f);
