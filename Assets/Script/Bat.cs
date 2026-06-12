@@ -18,14 +18,24 @@ public class Bat : Enemy
         switch (currentEnemyState)
         {
             case EnemyStates.Bat_Idle:
+                
                 if(_dist < chaseDistance)
                 {
+                    anim.SetBool("Idle", false);
+                    anim.SetBool("Chase", true);
                     ChangeState(EnemyStates.Bat_Chasing);
                 }
                 break;
 
             case EnemyStates.Bat_Chasing:
                 rb.MovePosition(Vector2.MoveTowards(transform.position, PlayerController.Instance.transform.position, Time.deltaTime * speed));
+
+                if (_dist > chaseDistance)
+                {
+                    anim.SetBool("Idle", true);
+                    anim.SetBool("Chase", false);
+                    ChangeState(EnemyStates.Bat_Idle);
+                }
 
                 FlipBat();
                 break;
@@ -36,21 +46,23 @@ public class Bat : Enemy
         }
     }
 
-    public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
-    {
-        health -= _damageDone;
-
-        if (!isRecoiling)
-        {
-            rb.linearVelocity = _hitForce * recoilFactor * _hitDirection;
-        }
-
-        GameObject _blood = Instantiate(blood, transform.position, Quaternion.identity);
-        DestroyObject(_blood, 5.5f);
-    }
 
     void FlipBat()
     {
         sr.flipX = PlayerController.Instance.transform.position.x < transform.position.x;
+    }
+
+    protected override void Death()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        anim.SetTrigger("Death");
+
+        //rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 12;
+        rb.simulated = false;
+
     }
 }

@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             //Destroy(gameObject);
-            Die();
+            Death();
         }
 
         if (isRecoiling)
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
 
     protected void OnCollisionStay2D(Collision2D _other)
     {
-        if (_other.gameObject.CompareTag("Player") && !PlayerController.Instance.pState.invincible)
+        if (_other.gameObject.CompareTag("Player") && !PlayerController.Instance.pState.invincible && health > 0)
         {
             DealDamage();
             PlayerController.Instance.HitStopTime(0, 5, 0.3f);
@@ -111,13 +111,13 @@ public class Enemy : MonoBehaviour
         PlayerController.Instance.TakeDamage(damage);
     }
 
-    protected virtual void Die()
+    protected virtual void Death()
     {
         if (isDead) return;
 
         isDead = true;
 
-        anim.SetTrigger("Die");
+        anim.SetTrigger("Death");
 
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
