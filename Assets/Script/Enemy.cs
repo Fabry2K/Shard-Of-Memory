@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected float damage;
 
-    protected float recoilTimer;
+    [SerializeField] protected GameObject blood;
+
+     float recoilTimer;
     protected Rigidbody2D rb;
 
     protected Animator anim;
@@ -68,13 +70,8 @@ public class Enemy : MonoBehaviour
     {
         health -= _damageDone;
 
-        anim.SetTrigger("Hit");
-
-        if (!isRecoiling)
-        {
-            rb.AddForce(-_hitForce * recoilFactor * _hitDirection);
-            isRecoiling = true;
-        }
+        GameObject _blood = Instantiate(blood, transform.position, Quaternion.identity);
+        DestroyObject(_blood, 5.5f);
     }
 
     protected void OnCollisionStay2D(Collision2D _other)

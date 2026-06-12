@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
     [Space(5)]
 
     [HideInInspector] public PlayerStateList pState;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private float xAxis, yAxis;
     private float gravity;
     Animator anim;
@@ -407,6 +407,17 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         pState.invincible = false;
     }
+
+    public void TakeDamageNoStop(float _damage)
+    {
+        Health -= Mathf.RoundToInt(_damage);
+        pState.invincible = true;
+        GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, DownAttackTransform.position + Vector3.up * bloodOffsetY, Quaternion.identity);
+        Destroy(_bloodSpurtParticles, 1.5f);
+        anim.SetTrigger("TakeDamage");
+        pState.invincible = false;
+    }
+
 
     IEnumerator Flash()
     {
