@@ -662,4 +662,15 @@ public class PlayerController : MonoBehaviour
             sr.sortingOrder = order;
         }
     }
+
+    public void ResetInputs()
+    {
+        xAxis = 0;
+        yAxis = 0;
+        attack = false;
+
+        rb.linearVelocity = Vector2.zero;
+
+        anim.SetBool("Walking", false);
+    }
 }

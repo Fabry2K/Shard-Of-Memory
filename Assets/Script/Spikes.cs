@@ -31,6 +31,7 @@ public class Spikes : MonoBehaviour
 
         PlayerController.Instance.pState.cutScene = true;
         PlayerController.Instance.pState.invincible = true;
+        PlayerController.Instance.ResetInputs();
 
         PlayerController.Instance.rb.linearVelocity = Vector2.zero;
 
