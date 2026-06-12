@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float speed;
 
     [SerializeField] protected float damage;
-    [SerializeField] protected DetectionBox attackZone;
 
     protected float recoilTimer;
     protected Rigidbody2D rb;
@@ -22,11 +21,13 @@ public class Enemy : MonoBehaviour
     protected enum EnemyStates
     {
         //skeleton
-        Skeleton_Idle,
         Skeleton_Walk,
+        Skeleton_Chasing,
         Skeleton_Flip,
-        Skeleton_Attack
+        Skeleton_Attack,
+        Skeleton_BackToOriginalPosition
     }
+
     protected EnemyStates currentEnemyState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

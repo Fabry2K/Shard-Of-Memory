@@ -10,7 +10,10 @@ public class Skeleton : Enemy
     [SerializeField] private float ledgeCheckX;
     [SerializeField] private float ledgeCheckY;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] protected DetectionBox attackZone;
+    [SerializeField] protected DetectionBox playerDetection;
 
+    private Vector2 chaseStartPosition;
     private bool canHit = false;
     private bool hitted = false;
 
@@ -18,19 +21,18 @@ public class Skeleton : Enemy
     protected override void Start()
     {
         base.Start();
+        currentEnemyState = EnemyStates.Skeleton_Walk;
         rb.gravityScale = 12f;
     }
 
     protected override void UpdateEnemyStates()
     {
-
         switch (currentEnemyState)
         {
-            case EnemyStates.Skeleton_Idle:
-
+            case EnemyStates.Skeleton_Walk:
                 maxTimer += Time.deltaTime;
 
-                if (maxTimer > walkMaxTime)
+                if (maxTimer > walkMaxTime && walkMaxTime > 0)
                 {
                     maxTimer = 0;
                     ChangeState(EnemyStates.Skeleton_Flip);
@@ -49,6 +51,13 @@ public class Skeleton : Enemy
                 if (anim.GetBool("HasTarget"))
                 {
                     ChangeState(EnemyStates.Skeleton_Attack);
+                }
+
+                anim.SetBool("Chasing", playerDetection.detectedColliders.Count > 0);
+                if (anim.GetBool("Chasing"))
+                {
+                    chaseStartPosition = transform.position;
+                    ChangeState(EnemyStates.Skeleton_Chasing);
                 }
 
 
@@ -70,7 +79,7 @@ public class Skeleton : Enemy
                 {
                     flipTimer = 0;
                     transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-                    ChangeState(EnemyStates.Skeleton_Idle);
+                    ChangeState(EnemyStates.Skeleton_Walk);
                 }
                 break;
 
@@ -85,6 +94,83 @@ public class Skeleton : Enemy
                     hitted = true;
                     DealDamage();
                 }
+
+
+                break;
+
+            case EnemyStates.Skeleton_Chasing:
+                anim.SetBool("Chasing", playerDetection.detectedColliders.Count > 0);
+
+                if (!anim.GetBool("Chasing"))
+                {
+                    ChangeState(EnemyStates.Skeleton_BackToOriginalPosition);
+                }
+
+                float direction = player.transform.position.x - transform.position.x;
+
+
+                if (direction > 0)
+                {
+                    
+                    if (transform.localScale.x < 0)
+                    {
+                        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                    }
+
+                    rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+                }
+                else
+                {
+                    
+                    if (transform.localScale.x > 0)
+                    {
+                        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                    }
+
+                    rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
+                }
+
+                // attack trigger
+                anim.SetBool("HasTarget", attackZone.detectedColliders.Count > 0);
+                if (anim.GetBool("HasTarget"))
+                {
+                    ChangeState(EnemyStates.Skeleton_Attack);
+                }
+
+                break;
+
+            case EnemyStates.Skeleton_BackToOriginalPosition:
+
+                // back to chasing
+                anim.SetBool("Chasing", playerDetection.detectedColliders.Count > 0);
+                if (anim.GetBool("Chasing"))
+                {
+                    chaseStartPosition = transform.position;
+                    ChangeState(EnemyStates.Skeleton_Chasing);
+                }
+
+                Vector2 dir = chaseStartPosition - (Vector2)transform.position;
+
+                float distance = dir.magnitude;
+
+                // se è arrivato abbastanza vicino
+                if (distance < 0.1f)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    ChangeState(EnemyStates.Skeleton_Walk);
+                    break;
+                }
+
+                // normalizza direzione
+                dir = dir.normalized;
+
+                rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
+
+                // flip visivo opzionale
+                if (dir.x > 0 && transform.localScale.x < 0)
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                else if (dir.x < 0 && transform.localScale.x > 0)
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
 
 
                 break;
@@ -105,7 +191,7 @@ public class Skeleton : Enemy
     {
         hitted = false;
         canHit = false;
-        ChangeState(EnemyStates.Skeleton_Idle);
+        ChangeState(EnemyStates.Skeleton_Walk);
     }
 
 }
