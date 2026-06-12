@@ -28,18 +28,28 @@ public class Spikes : MonoBehaviour
 
     IEnumerator RespawnPoint()
     {
+
         PlayerController.Instance.pState.cutScene = true;
         PlayerController.Instance.pState.invincible = true;
+
         PlayerController.Instance.rb.linearVelocity = Vector2.zero;
-        Time.timeScale = 0;
-        StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.In));
+
         PlayerController.Instance.TakeDamageNoStop(1);
-        //yield return new WaitForSecondsRealtime(1);
-        PlayerController.Instance.transform.position = GameManager.Instance.platformingRespawnPoint;
-        StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.Out));
+
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.In));
+
         yield return new WaitForSecondsRealtime(UIManager.Instance.sceneFader.fadeTime);
+
+        PlayerController.Instance.transform.position =
+            GameManager.Instance.platformingRespawnPoint;
+
+        StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.Out));
+
+        yield return new WaitForSecondsRealtime(UIManager.Instance.sceneFader.fadeTime);
+
         PlayerController.Instance.pState.cutScene = false;
         PlayerController.Instance.pState.invincible = false;
-        Time.timeScale = 1;
     }
 }
