@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 99329ec802fbb7d4eab4b95b98418f06
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3687275619094542981
+    second: rage_burst_effect004_0
+  - first:
+      213: 555175112596339053
+    second: rage_burst_effect004_1
+  - first:
+      213: -735049284720085606
+    second: rage_burst_effect004_2
+  - first:
+      213: 1555091929666596748
+    second: rage_burst_effect004_3
+  - first:
+      213: 5972588668387588635
+    second: rage_burst_effect004_4
+  - first:
+      213: 5471891973859308796
+    second: rage_burst_effect004_5
+  - first:
+      213: 3862759241700755864
+    second: rage_burst_effect004_6
+  - first:
+      213: 9058822920050225161
+    second: rage_burst_effect004_7
+  - first:
+      213: -2574480765894782752
+    second: rage_burst_effect004_8
+  - first:
+      213: 209621781144107926
+    second: rage_burst_effect004_9
+  - first:
+      213: 6990039843231452593
+    second: rage_burst_effect004_10
+  - first:
+      213: 3056926177397519503
+    second: rage_burst_effect004_11
+  - first:
+      213: -6728337824166100672
+    second: rage_burst_effect004_12
+  - first:
+      213: -8828766829214922171
+    second: rage_burst_effect004_13
+  - first:
+      213: 2730968433803033366
+    second: rage_burst_effect004_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rage_burst_effect004_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 294
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ab619b3a5db2330800000000000000
+      internalID: 3687275619094542981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 309
+        width: 11
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69317ec2d064b700800000000000000
+      internalID: 555175112596339053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 303
+        width: 11
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95badbe1949cc5f0800000000000000
+      internalID: -735049284720085606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_3
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 318
+        width: 10
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8faadceedbc49510800000000000000
+      internalID: 1555091929666596748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_4
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 322
+        width: 27
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1af3c0ffb5e2e250800000000000000
+      internalID: 5972588668387588635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 241
+        width: 55
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4f13742c010fb40800000000000000
+      internalID: 5471891973859308796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 219
+        width: 72
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8994e6680174b9530800000000000000
+      internalID: 3862759241700755864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_7
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 203
+        width: 63
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900b2c8337767bd70800000000000000
+      internalID: 9058822920050225161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 245
+        width: 63
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e014c3326b954cd0800000000000000
+      internalID: -2574480765894782752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_9
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 231
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b774a36e9b8e200800000000000000
+      internalID: 209621781144107926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_10
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 248
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd43add33c910160800000000000000
+      internalID: 6990039843231452593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 201
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f843f5c79226c6a20800000000000000
+      internalID: 3056926177397519503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_12
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 186
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04141cda56420a2a0800000000000000
+      internalID: -6728337824166100672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_13
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 173
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a84eb785be97580800000000000000
+      internalID: -8828766829214922171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rage_burst_effect004_14
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 165
+        width: 47
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b72ad325956e520800000000000000
+      internalID: 2730968433803033366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rage_burst_effect004_0: 3687275619094542981
+      rage_burst_effect004_1: 555175112596339053
+      rage_burst_effect004_10: 6990039843231452593
+      rage_burst_effect004_11: 3056926177397519503
+      rage_burst_effect004_12: -6728337824166100672
+      rage_burst_effect004_13: -8828766829214922171
+      rage_burst_effect004_14: 2730968433803033366
+      rage_burst_effect004_2: -735049284720085606
+      rage_burst_effect004_3: 1555091929666596748
+      rage_burst_effect004_4: 5972588668387588635
+      rage_burst_effect004_5: 5471891973859308796
+      rage_burst_effect004_6: 3862759241700755864
+      rage_burst_effect004_7: 9058822920050225161
+      rage_burst_effect004_8: -2574480765894782752
+      rage_burst_effect004_9: 209621781144107926
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
