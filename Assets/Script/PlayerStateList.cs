@@ -11,4 +11,5 @@ public class PlayerStateList : MonoBehaviour
     public bool casting;
     public bool cutScene = false;
     public bool upSpellCasting = false;
+    public bool alive = true;
 }

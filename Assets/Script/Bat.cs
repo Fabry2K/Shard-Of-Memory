@@ -12,6 +12,17 @@ public class Bat : Enemy
         currentEnemyState = EnemyStates.Bat_Idle;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+
+        if (!PlayerController.Instance.pState.alive)
+        {
+            ChangeState(EnemyStates.Bat_Idle);
+        }
+
+    }
+
     protected override void UpdateEnemyStates()
     {
         float _dist = Vector2.Distance(transform.position, PlayerController.Instance.transform.position);

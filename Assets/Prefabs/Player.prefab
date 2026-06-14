@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 4394743066410829472}
   - component: {fileID: 9044102470880174438}
   - component: {fileID: 5169096409565937117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -558,3 +558,4 @@ MonoBehaviour:
   casting: 0
   cutScene: 0
   upSpellCasting: 0
+  alive: 1

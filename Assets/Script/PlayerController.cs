@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
+        pState.alive = true;
         canDash = true;
         Mana = mana;
         manaStorage.fillAmount = Mana;
@@ -142,23 +143,33 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (pState.cutScene) return;
 
-        GetInputs();
+        if (pState.alive)
+        {
+            GetInputs();
+        }
+
+        
         UpdateJumpVariables();
-        if (pState.dashing) return;
         RestoreTimeScale();
+
+        if (pState.dashing || pState.healing) return;
+
+        if (pState.alive)
+        {
+            Move();
+            Heal();
+            CastSpell();
+            Flip();
+            Jump();
+            StartDash();
+            Attack();
+        }
+
         FlashWhileInvincible();
-        Move();
-        Heal();
-        CastSpell();
 
-
-        if (pState.healing) return;
-        Flip();
-        Jump();
-        StartDash();
-        Attack();
     }
 
     private void FixedUpdate()
@@ -430,8 +441,21 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        Health -= Mathf.RoundToInt(_damage);
-        StartCoroutine(StopTakingDamage());
+        if (pState.alive)
+        {
+            Health -= Mathf.RoundToInt(_damage);
+
+            if(Health <= 0)
+            {
+                Health = 0;
+                StartCoroutine(Death());
+            } else
+            {
+                StartCoroutine(StopTakingDamage());
+            }
+
+        }
+
     }
 
     IEnumerator StopTakingDamage()
@@ -518,6 +542,22 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(_delay);
         restoreTime = true;
+    }
+
+    IEnumerator Death()
+    {
+        pState.alive = false;
+        Time.timeScale = 1f;
+        GameObject _bloodSpurtParticles = Instantiate(
+            bloodSpurt,
+            DownAttackTransform.position + Vector3.up * bloodOffsetY,
+            Quaternion.Euler(0, 0, Random.Range(0f, 360f))
+        );
+        Destroy(_bloodSpurtParticles, 1.5f);
+        anim.SetTrigger("Death");
+
+        yield return new WaitForSeconds(0.9f);
+        StartCoroutine(UIManager.Instance.ActivateDeathScreen());
     }
 
     public int Health
