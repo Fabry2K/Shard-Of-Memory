@@ -1,0 +1,453 @@
+fileFormatVersion: 2
+guid: f8abc3ada7c3ab042993563efed935b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3089201700671812779
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_0
+  - first:
+      213: 1593631708579114379
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_1
+  - first:
+      213: 3130612768753967312
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_2
+  - first:
+      213: -7168318940946399761
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_3
+  - first:
+      213: -8818032143086680796
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_4
+  - first:
+      213: -8654652375245359044
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_5
+  - first:
+      213: -8911750853586889044
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_6
+  - first:
+      213: 8219529769582746747
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_7
+  - first:
+      213: 8832818768758190704
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_8
+  - first:
+      213: 1735302253758302939
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_9
+  - first:
+      213: -3158032251300428549
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_10
+  - first:
+      213: -3472697652492105671
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_11
+  - first:
+      213: -7409323606743198537
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_12
+  - first:
+      213: 2008328384920233737
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_13
+  - first:
+      213: 3090822505464353544
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_14
+  - first:
+      213: -4058468575375414518
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_15
+  - first:
+      213: -2506567519431911690
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_16
+  - first:
+      213: -4352310128583797369
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_17
+  - first:
+      213: -1055331522935081744
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_18
+  - first:
+      213: 1253305368547082723
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_19
+  - first:
+      213: -5482226094672214832
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_20
+  - first:
+      213: 7300582021454470959
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_21
+  - first:
+      213: 1005985566366357016
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_22
+  - first:
+      213: 5853098655762905614
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_23
+  - first:
+      213: 1614258794047278497
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_24
+  - first:
+      213: -8571273924862041402
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_25
+  - first:
+      213: 5328470696709549508
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_26
+  - first:
+      213: -2426917766803984638
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_27
+  - first:
+      213: 4975627324860357540
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_28
+  - first:
+      213: -7262015430108247496
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_29
+  - first:
+      213: 9033053736300254122
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_30
+  - first:
+      213: 3361883000728778917
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_31
+  - first:
+      213: 399633800697745633
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_32
+  - first:
+      213: 7531783151220180767
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_33
+  - first:
+      213: -573954904996941719
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_34
+  - first:
+      213: -3291980331324094809
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_35
+  - first:
+      213: 2637952307181689307
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_36
+  - first:
+      213: -6628061514469624827
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_37
+  - first:
+      213: 2871152209182568790
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_38
+  - first:
+      213: 4344579073518679995
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_39
+  - first:
+      213: 3419271807953997968
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_40
+  - first:
+      213: -4321140973565281030
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_41
+  - first:
+      213: -8322761961473784917
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_42
+  - first:
+      213: -502882107057276573
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_43
+  - first:
+      213: -232423952245485924
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_44
+  - first:
+      213: -4231825887190156470
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_45
+  - first:
+      213: 3698350547735598148
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_46
+  - first:
+      213: -2644797048134526256
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_47
+  - first:
+      213: 2861196006721107095
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_48
+  - first:
+      213: -7584787968253308734
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_49
+  - first:
+      213: 6485227929054946167
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_50
+  - first:
+      213: 4034954253383843452
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_51
+  - first:
+      213: -3564245206141683278
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_52
+  - first:
+      213: -2207933661899543223
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_53
+  - first:
+      213: 3694575450847932708
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_54
+  - first:
+      213: 729936093353640488
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_55
+  - first:
+      213: -4493294335531051881
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_56
+  - first:
+      213: -3079954864105784411
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_57
+  - first:
+      213: 6348295728743956716
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_58
+  - first:
+      213: 7987580140650033047
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_59
+  - first:
+      213: 2027933723891957469
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_60
+  - first:
+      213: 1758361980844999891
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_61
+  - first:
+      213: -2237588108193163608
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_62
+  - first:
+      213: 8526424480819032926
+    second: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_9
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 856
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdac23da438051810800000000000000
+      internalID: 1735302253758302939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_42
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 500
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3c838871c9f7c80800000000000000
+      internalID: -8322761961473784917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 264
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e8d1995a346ccf0800000000000000
+      internalID: -232423952245485924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c7e21575b58db1b4c9715f4fe93d20b8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_0: -3089201700671812779
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_1: 1593631708579114379
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_10: -3158032251300428549
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_11: -3472697652492105671
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_12: -7409323606743198537
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_13: 2008328384920233737
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_14: 3090822505464353544
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_15: -4058468575375414518
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_16: -2506567519431911690
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_17: -4352310128583797369
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_18: -1055331522935081744
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_19: 1253305368547082723
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_2: 3130612768753967312
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_20: -5482226094672214832
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_21: 7300582021454470959
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_22: 1005985566366357016
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_23: 5853098655762905614
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_24: 1614258794047278497
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_25: -8571273924862041402
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_26: 5328470696709549508
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_27: -2426917766803984638
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_28: 4975627324860357540
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_29: -7262015430108247496
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_3: -7168318940946399761
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_30: 9033053736300254122
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_31: 3361883000728778917
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_32: 399633800697745633
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_33: 7531783151220180767
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_34: -573954904996941719
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_35: -3291980331324094809
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_36: 2637952307181689307
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_37: -6628061514469624827
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_38: 2871152209182568790
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_39: 4344579073518679995
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_4: -8818032143086680796
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_40: 3419271807953997968
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_41: -4321140973565281030
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_42: -8322761961473784917
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_43: -502882107057276573
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_44: -232423952245485924
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_45: -4231825887190156470
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_46: 3698350547735598148
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_47: -2644797048134526256
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_48: 2861196006721107095
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_49: -7584787968253308734
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_5: -8654652375245359044
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_50: 6485227929054946167
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_51: 4034954253383843452
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_52: -3564245206141683278
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_53: -2207933661899543223
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_54: 3694575450847932708
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_55: 729936093353640488
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_56: -4493294335531051881
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_57: -3079954864105784411
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_58: 6348295728743956716
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_59: 7987580140650033047
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_6: -8911750853586889044
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_60: 2027933723891957469
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_61: 1758361980844999891
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_62: -2237588108193163608
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_63: 8526424480819032926
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_64: 891233597
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_7: 8219529769582746747
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_8: 8832818768758190704
+      SpriteAtlasTexture-Green (Group 0)-1024x1024-fmt4_9: 1735302253758302939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -52,6 +52,9 @@ TagManager:
   - name: Foreground
     uniqueID: 1613973903
     locked: 0
+  - name: Spell
+    uniqueID: 2285666393
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []

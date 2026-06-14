@@ -10,4 +10,5 @@ public class PlayerStateList : MonoBehaviour
     public bool healing;
     public bool casting;
     public bool cutScene = false;
+    public bool upSpellCasting = false;
 }

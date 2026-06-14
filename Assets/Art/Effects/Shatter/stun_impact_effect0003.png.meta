@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: bdf7df95adb16e146bdb68421a5ddb7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2362769615606768112
+    second: stun_impact_effect0003_0
+  - first:
+      213: -2878729148899051796
+    second: stun_impact_effect0003_1
+  - first:
+      213: 4797889991947630338
+    second: stun_impact_effect0003_2
+  - first:
+      213: -2357263788928628802
+    second: stun_impact_effect0003_3
+  - first:
+      213: -1996202248421122119
+    second: stun_impact_effect0003_4
+  - first:
+      213: -8095766423334638007
+    second: stun_impact_effect0003_5
+  - first:
+      213: 6617596063435726563
+    second: stun_impact_effect0003_6
+  - first:
+      213: -6238252359277383270
+    second: stun_impact_effect0003_7
+  - first:
+      213: -4663871232460239301
+    second: stun_impact_effect0003_8
+  - first:
+      213: 7152221466674990610
+    second: stun_impact_effect0003_9
+  - first:
+      213: -6736135932534041989
+    second: stun_impact_effect0003_10
+  - first:
+      213: 412319177032594885
+    second: stun_impact_effect0003_11
+  - first:
+      213: 9174203391384737374
+    second: stun_impact_effect0003_12
+  - first:
+      213: 5024427281539978000
+    second: stun_impact_effect0003_13
+  - first:
+      213: 5504950160871841048
+    second: stun_impact_effect0003_14
+  - first:
+      213: -2529030058924554916
+    second: stun_impact_effect0003_15
+  - first:
+      213: -5396453163487152555
+    second: stun_impact_effect0003_16
+  - first:
+      213: -2773126299871252691
+    second: stun_impact_effect0003_17
+  - first:
+      213: -8952926015282124202
+    second: stun_impact_effect0003_18
+  - first:
+      213: -6843973035220626112
+    second: stun_impact_effect0003_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stun_impact_effect0003_0
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 246
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1e358627e3ac020800000000000000
+      internalID: 2362769615606768112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce63f4b5713bc08d0800000000000000
+      internalID: -2878729148899051796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 183
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207b0710787859240800000000000000
+      internalID: 4797889991947630338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 183
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb78403c211594fd0800000000000000
+      internalID: -2357263788928628802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 188
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bfd503a1a01c44e0800000000000000
+      internalID: -1996202248421122119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_5
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 166
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94eaa98c45f06af80800000000000000
+      internalID: -8095766423334638007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 187
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee1c14ee8c66db50800000000000000
+      internalID: 6617596063435726563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 148
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91770ae7864d69a0800000000000000
+      internalID: -6238252359277383270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_8
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 141
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e4b0703d9964fb0800000000000000
+      internalID: -4663871232460239301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_9
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 124
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e0614a78bc14360800000000000000
+      internalID: 7152221466674990610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_10
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 132
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7250961f007482a0800000000000000
+      internalID: -6736135932534041989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_11
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 101
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5fb116b1ad8b500800000000000000
+      internalID: 412319177032594885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_12
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 114
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56dba0a061515f70800000000000000
+      internalID: 9174203391384737374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 57
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013d8f3fdf95ab540800000000000000
+      internalID: 5024427281539978000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_14
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 62
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ddefc3103856c40800000000000000
+      internalID: 5504950160871841048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 61
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55448f8f8417ecd0800000000000000
+      internalID: -2529030058924554916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_16
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 67
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556b05f7072fb15b0800000000000000
+      internalID: -5396453163487152555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_17
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 20
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f61eaa250e389d0800000000000000
+      internalID: -2773126299871252691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 11
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a61c64931d0c380800000000000000
+      internalID: -8952926015282124202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stun_impact_effect0003_19
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 29
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045925f09c25501a0800000000000000
+      internalID: -6843973035220626112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      stun_impact_effect0003_0: 2362769615606768112
+      stun_impact_effect0003_1: -2878729148899051796
+      stun_impact_effect0003_10: -6736135932534041989
+      stun_impact_effect0003_11: 412319177032594885
+      stun_impact_effect0003_12: 9174203391384737374
+      stun_impact_effect0003_13: 5024427281539978000
+      stun_impact_effect0003_14: 5504950160871841048
+      stun_impact_effect0003_15: -2529030058924554916
+      stun_impact_effect0003_16: -5396453163487152555
+      stun_impact_effect0003_17: -2773126299871252691
+      stun_impact_effect0003_18: -8952926015282124202
+      stun_impact_effect0003_19: -6843973035220626112
+      stun_impact_effect0003_2: 4797889991947630338
+      stun_impact_effect0003_3: -2357263788928628802
+      stun_impact_effect0003_4: -1996202248421122119
+      stun_impact_effect0003_5: -8095766423334638007
+      stun_impact_effect0003_6: 6617596063435726563
+      stun_impact_effect0003_7: -6238252359277383270
+      stun_impact_effect0003_8: -4663871232460239301
+      stun_impact_effect0003_9: 7152221466674990610
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -42,7 +42,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float timeBetweenAttack;
     private float timeSinceAttack;
     [SerializeField] float damage;
-    [SerializeField] GameObject slashEffect;
+    private bool slashEffectSwitch = false;
+    [SerializeField] GameObject slashEffect1;
+    [SerializeField] GameObject slashEffect2;
     [SerializeField] GameObject enemyHitEffect;
     bool restoreTime;
     float restoreTimeSpeed;
@@ -80,6 +82,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float timeBetweenCast = 0.5f;
     [SerializeField] float spellDamage;
     [SerializeField] float downSpellForce;
+
+    [SerializeField] float upSpellFreezeTime = 0.5f;
 
     [SerializeField] GameObject sideSpellFireball;
     [SerializeField] GameObject upSpellExplosion;
@@ -124,6 +128,7 @@ public class PlayerController : MonoBehaviour
         Mana = mana;
         manaStorage.fillAmount = Mana;
         Health = maxHealth;
+        pState.lookingRight = transform.localScale.x > 0;
     }
 
     private void OnDrawGizmos()
@@ -193,6 +198,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if (pState.upSpellCasting)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         if (pState.healing)
         {
             rb.linearVelocity = new Vector2(0, 0);
@@ -259,22 +270,52 @@ public class PlayerController : MonoBehaviour
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
 
-            if(yAxis == 0 || yAxis < 0 && Grounded())
+            if (yAxis == 0 || yAxis < 0 && Grounded())
             {
                 int _recoilLeftOnRight = pState.lookingRight ? 1 : -1;
 
                 Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, Vector2.right * _recoilLeftOnRight, recoilXSpeed);
-                Instantiate(slashEffect, SideAttackTransform);
+
+                GameObject slash = Instantiate(
+                    slashEffectSwitch ? slashEffect1 : slashEffect2,
+                    SideAttackTransform.position,
+                    Quaternion.identity
+                );
+
+                Vector3 scale = slash.transform.localScale;
+                scale.x = pState.lookingRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+                slash.transform.localScale = scale;
+
+
             } else if (yAxis > 0)
             {
                 Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, Vector2.up, recoilYSpeed);
-                SlashEffectAtAngle(slashEffect, 80, UpAttackTransform);
+
+                if (slashEffectSwitch)
+                {
+                    SlashEffectAtAngle(slashEffectSwitch ? slashEffect1 : slashEffect2, 90, UpAttackTransform);
+                }
+                else
+                {
+                    SlashEffectAtAngle(slashEffectSwitch ? slashEffect1 : slashEffect2, 90, UpAttackTransform);
+                }
+                
             }
             else if (yAxis < 0 && !Grounded())
             {
                 Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, Vector2.down, recoilYSpeed);
-                SlashEffectAtAngle(slashEffect, -90, DownAttackTransform);
+
+                if (slashEffectSwitch)
+                {
+                    SlashEffectAtAngle(slashEffectSwitch ? slashEffect1 : slashEffect2, -90, DownAttackTransform);
+                }
+                else
+                {
+                    SlashEffectAtAngle(slashEffectSwitch ? slashEffect1 : slashEffect2, -90, DownAttackTransform);
+                }
+                
             }
+            slashEffectSwitch = !slashEffectSwitch;
         }
     }
 
@@ -316,9 +357,11 @@ public class PlayerController : MonoBehaviour
 
     void SlashEffectAtAngle(GameObject _slashEffect, int _effectAngle, Transform _attackTransform)
     {
-        _slashEffect = Instantiate(_slashEffect, _attackTransform);
-        _slashEffect.transform.eulerAngles = new Vector3(0, 0, _effectAngle);
-        //_slashEffect.transform.localScale = new Vector2(_attackTransform.localScale.x,  _attackTransform.localScale.y);
+
+        _slashEffect = Instantiate(_slashEffect, _attackTransform.position, Quaternion.identity); 
+        _slashEffect.transform.eulerAngles = new Vector3(0, 0, _effectAngle); 
+        _slashEffect.transform.localScale = new Vector2(_attackTransform.localScale.x, _attackTransform.localScale.y);
+
     }
 
     void Recoil()
@@ -394,7 +437,11 @@ public class PlayerController : MonoBehaviour
     IEnumerator StopTakingDamage()
     {
         pState.invincible = true;
-        GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, DownAttackTransform.position + Vector3.up * bloodOffsetY, Quaternion.identity);
+        GameObject _bloodSpurtParticles = Instantiate(
+            bloodSpurt,
+            DownAttackTransform.position + Vector3.up * bloodOffsetY,
+            Quaternion.Euler(0, 0, Random.Range(0f, 360f))
+        );
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("TakeDamage");
         yield return new WaitForSeconds(1f);
@@ -405,7 +452,11 @@ public class PlayerController : MonoBehaviour
     {
         Health -= Mathf.RoundToInt(_damage);
         pState.invincible = true;
-        GameObject _bloodSpurtParticles = Instantiate(bloodSpurt, DownAttackTransform.position + Vector3.up * bloodOffsetY, Quaternion.identity);
+        GameObject _bloodSpurtParticles = Instantiate(
+            bloodSpurt,
+            DownAttackTransform.position + Vector3.up * bloodOffsetY,
+            Quaternion.Euler(0, 0, Random.Range(0f, 360f))
+        );
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("TakeDamage");
         pState.invincible = false;
@@ -551,9 +602,10 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("Casting", true);
         yield return new WaitForSeconds(0.15f);
+        Mana -= manaSpellCost;
 
         // side spell
-        if(yAxis == 0 || (yAxis < 0 && Grounded()))
+        if (yAxis == 0 || (yAxis < 0 && Grounded()))
         {
             GameObject _fireBall = Instantiate(sideSpellFireball, SideAttackTransform.position, Quaternion.identity);
 
@@ -566,22 +618,33 @@ public class PlayerController : MonoBehaviour
                 _fireBall.transform.eulerAngles = new Vector2(_fireBall.transform.eulerAngles.x, 180);
             }
             pState.recoilingX = true;
+            yield return new WaitForSeconds(0.35f);
         }
 
         else if(yAxis > 0)
         {
-            Instantiate(upSpellExplosion, transform);
+            pState.upSpellCasting = true;
+
             rb.linearVelocity = Vector2.zero;
+            rb.gravityScale = 0;
+
+            Instantiate(upSpellExplosion, transform);
+
+            yield return new WaitForSeconds(upSpellFreezeTime);
+
+            rb.gravityScale = gravity;
+            pState.upSpellCasting = false;
         }
 
         else if (yAxis < 0 && !Grounded())
         {
             downSpellFireball.SetActive(true);
             SetSorting(downSpellFireball, "Midground", 10);
+            yield return new WaitForSeconds(0.35f);
         }
 
-        Mana -= manaSpellCost;
-        yield return new WaitForSeconds(0.35f);
+        
+        
         anim.SetBool("Casting", false);
         pState.casting = false;
     }
@@ -601,6 +664,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        if (pState.upSpellCasting) return;
 
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !pState.jumping)
         {
