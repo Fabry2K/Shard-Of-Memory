@@ -11,6 +11,7 @@ public class Skeleton : Enemy
     [SerializeField] private float ledgeCheckY;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] protected DetectionBox attackZone;
+    [SerializeField] protected DetectionBox enemyZone;
     [SerializeField] protected DetectionBox playerDetection;
 
     private Vector2 chaseStartPosition;
@@ -56,6 +57,7 @@ public class Skeleton : Enemy
                     ChangeState(EnemyStates.Skeleton_Flip);
                 }
 
+
                 anim.SetBool("HasTarget", attackZone.detectedColliders.Count > 0);
                 if (anim.GetBool("HasTarget"))
                 {
@@ -68,6 +70,13 @@ public class Skeleton : Enemy
                     chaseStartPosition = transform.position;
                     ChangeState(EnemyStates.Skeleton_Chasing);
                 }
+
+                if (enemyZone.detectedColliders.Count > 0)
+                {
+                    maxTimer = 0;
+                    ChangeState(EnemyStates.Skeleton_Flip);
+                }
+
 
 
                 if (transform.localScale.x > 0)

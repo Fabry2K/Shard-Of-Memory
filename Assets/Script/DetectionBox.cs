@@ -13,7 +13,7 @@ public class DetectionBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ENTER: " + collision.name);
+        //Debug.Log("ENTER: " + collision.name);
         detectedColliders.Add(collision);
     }
 

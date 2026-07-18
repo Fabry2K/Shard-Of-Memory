@@ -16,8 +16,8 @@ TagManager:
   - Attackable
   - Player
   - EnemyHitbox
+  - FlipHitBox
   - NonScalableGround
-  - 
   - 
   - 
   - 
