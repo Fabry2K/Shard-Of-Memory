@@ -27,6 +27,7 @@ public class Skeleton : Enemy
 
     protected override void Update()
     {
+        base.Update();
         if (!PlayerController.Instance.pState.alive)
         {
             ChangeState(EnemyStates.Skeleton_Walk);
