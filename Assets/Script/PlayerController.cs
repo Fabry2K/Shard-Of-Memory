@@ -150,8 +150,8 @@ public class PlayerController : MonoBehaviour
         {
             GetInputs();
         }
+        Heal();
 
-        
         UpdateJumpVariables();
         RestoreTimeScale();
 
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
         if (pState.alive)
         {
             Move();
-            Heal();
+
             CastSpell();
             Flip();
             Jump();
@@ -596,6 +596,7 @@ public class PlayerController : MonoBehaviour
 
     void Heal()
     {
+
         if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && Grounded() && !pState.dashing)
         {
             pState.healing = true;
