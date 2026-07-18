@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
     public string transitionedFromScene;
 
     public Vector2 platformingRespawnPoint;
+    public Vector2 respawnPoint;
+    [SerializeField] Bench bench;
 
     public static GameManager Instance { get; private set; }
 
@@ -18,5 +20,29 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        bench = FindObjectOfType<Bench>();
+    }
+
+    public void RespawnPlayer()
+    {
+        if (bench != null) {
+            if (bench.interacted)
+            {
+                respawnPoint = bench.transform.position;
+            }
+            else
+            {
+                respawnPoint = platformingRespawnPoint;
+            }
+        }
+        else
+        {
+            respawnPoint = platformingRespawnPoint;
+        }
+
+        PlayerController.Instance.transform.position = respawnPoint;
+
+        StartCoroutine(UIManager.Instance.DeactivateDeathScreen());
+        PlayerController.Instance.Respawned();
     }
 }

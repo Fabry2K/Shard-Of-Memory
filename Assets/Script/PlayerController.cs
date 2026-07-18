@@ -556,8 +556,25 @@ public class PlayerController : MonoBehaviour
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("Death");
 
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        GetComponent<BoxCollider2D>().enabled = false;
+
         yield return new WaitForSeconds(0.9f);
         StartCoroutine(UIManager.Instance.ActivateDeathScreen());
+    }
+
+    public void Respawned()
+    {
+        if (!pState.alive)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            GetComponent<BoxCollider2D>().enabled = true;
+
+            pState.alive = true;
+            Health = maxHealth;
+            anim.Play("Player_Idle");
+        }
     }
 
     public int Health

@@ -38,4 +38,11 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         deathScreen.SetActive(true);
     }
+
+    public IEnumerator DeactivateDeathScreen()
+    {
+        yield return new WaitForSeconds(0.5f);
+        deathScreen.SetActive(false);
+        StartCoroutine(sceneFader.Fade(SceneFader.FadeDirection.Out));
+    }
 }

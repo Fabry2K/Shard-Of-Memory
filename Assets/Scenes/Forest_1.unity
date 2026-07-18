@@ -6609,11 +6609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6068762013495284909, guid: 0cb58b6e279d3794ab74b4d30d09c80a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.69
+      value: 14.57
       objectReference: {fileID: 0}
     - target: {fileID: 6068762013495284909, guid: 0cb58b6e279d3794ab74b4d30d09c80a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -199.76
+      value: -204.49
       objectReference: {fileID: 0}
     - target: {fileID: 6068762013495284909, guid: 0cb58b6e279d3794ab74b4d30d09c80a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31222,6 +31222,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7836756428796606682, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -236.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836756428796606682, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 137.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8279942563787312393, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -31310,6 +31318,10 @@ PrefabInstance:
       propertyPath: deathScreen
       value: 
       objectReference: {fileID: 329981900}
+    - target: {fileID: 8975424491376627030, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

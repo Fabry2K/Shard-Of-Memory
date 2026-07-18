@@ -32,6 +32,9 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Forest_4.unity
     m_guid: c6d39e18e7de152498ace58f6f2d83cf
+  - m_enabled: 1
+    m_path: Assets/Scenes/Forest_Boss.unity
+    m_guid: 6cae258d4318a38488cb4ed15f9c2f7b
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
@@ -39,6 +42,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 3912924688424894541
       type: {class: OSXStandaloneBuildProfile, ns: UnityEditor.OSXStandalone, asm: UnityEditor.OSXStandalone.Extensions}
       data:

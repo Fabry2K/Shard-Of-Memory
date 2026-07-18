@@ -25,6 +25,14 @@ public class Skeleton : Enemy
         rb.gravityScale = 12f;
     }
 
+    protected override void Update()
+    {
+        if (!PlayerController.Instance.pState.alive)
+        {
+            ChangeState(EnemyStates.Skeleton_Walk);
+        }
+    }
+
     protected override void UpdateEnemyStates()
     {
         switch (currentEnemyState)
