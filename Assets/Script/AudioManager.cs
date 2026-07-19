@@ -5,14 +5,13 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [Header("References")]
-    public AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer;
 
-    public float CurrentVolume { get; private set; } = 1f;
+    public float CurrentVolume { get; private set; }
+
 
     private void Awake()
     {
-        // Singleton
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -20,25 +19,23 @@ public class AudioManager : MonoBehaviour
         }
 
         Instance = this;
+
         DontDestroyOnLoad(gameObject);
 
-        // Carica il volume salvato
-        CurrentVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        ApplyVolume(CurrentVolume);
+
+        CurrentVolume = PlayerPrefs.GetFloat("Volume", 0f);
+
+        audioMixer.SetFloat("Volume", CurrentVolume);
     }
+
 
     public void SetVolume(float volume)
     {
         CurrentVolume = volume;
 
-        ApplyVolume(volume);
+        audioMixer.SetFloat("Volume", volume);
 
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        PlayerPrefs.SetFloat("Volume", volume);
         PlayerPrefs.Save();
-    }
-
-    private void ApplyVolume(float volume)
-    {
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
     }
 }

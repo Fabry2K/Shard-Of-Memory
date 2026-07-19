@@ -1,38 +1,35 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UIElements;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
 
-    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] private Slider volumeSlider;
 
-    public void SetVolume(float _volume)
+
+    private void OnEnable()
     {
-        audioMixer.SetFloat("Volume", _volume);
+        if (AudioManager.Instance != null)
+        {
+            volumeSlider.value = AudioManager.Instance.CurrentVolume;
+        }
     }
 
-    public void SetQuality(int _qualityIndex)
+
+    public void SetVolume(float volume)
     {
-        QualitySettings.SetQualityLevel(_qualityIndex);
+        AudioManager.Instance.SetVolume(volume);
     }
+
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
 
     public void Quit()
     {
         Application.Quit();
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
