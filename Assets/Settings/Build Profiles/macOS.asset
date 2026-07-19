@@ -21,6 +21,9 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
+    m_path: Assets/Scenes/Main Menu.unity
+    m_guid: f7f8b8b75c9588c47af31029da55410d
+  - m_enabled: 1
     m_path: Assets/Scenes/Forest_1.unity
     m_guid: 8c9cfa26abfee488c85f1582747f6a02
   - m_enabled: 1
