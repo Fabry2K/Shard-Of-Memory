@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         player = PlayerController.Instance;
@@ -51,7 +52,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-
+        if (GameManager.Instance.gameIsPaused) return;
         UpdateEnemyStates();
 
         if (health <= 0)

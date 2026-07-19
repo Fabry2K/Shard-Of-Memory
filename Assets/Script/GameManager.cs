@@ -8,7 +8,27 @@ public class GameManager : MonoBehaviour
     public Vector2 respawnPoint;
     [SerializeField] Bench bench;
 
+    [SerializeField] private FadeUI pauseMenu;
+    [SerializeField] private float fadeTime;
+    public bool gameIsPaused;
+
     public static GameManager Instance { get; private set; }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused)
+        {
+            pauseMenu.FadeUIIn(fadeTime);
+            Time.timeScale = 0;
+            gameIsPaused = true;
+        }
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1;
+        gameIsPaused = false;
+    }
 
     private void Awake()
     {
