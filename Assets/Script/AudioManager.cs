@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
-        CurrentVolume = PlayerPrefs.GetFloat("Volume", 0f);
+        CurrentVolume = PlayerPrefs.GetFloat("Volume", -30f);
 
         audioMixer.SetFloat("Volume", CurrentVolume);
     }

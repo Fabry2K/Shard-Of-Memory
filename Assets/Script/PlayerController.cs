@@ -101,6 +101,19 @@ public class PlayerController : MonoBehaviour
     private bool dashed;
     private SpriteRenderer sr;
     private bool canFlash = true;
+    private bool landingSoundPlayed;
+
+    private AudioSource audioSource;
+
+    [Space(5)]
+
+    [Header("Audio")]
+    [SerializeField] AudioClip landingSound;
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip dashAndAttackSound;
+    [SerializeField] AudioClip spellCastSound;
+    [SerializeField] AudioClip hurtSound;
+    [SerializeField] AudioClip healSound;
 
 
     public static PlayerController Instance;
@@ -122,6 +135,7 @@ public class PlayerController : MonoBehaviour
         pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
         pState.alive = true;
@@ -243,6 +257,7 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         pState.dashing = true;
         anim.SetTrigger("Dashing");
+        audioSource.PlayOneShot(dashAndAttackSound);
         rb.gravityScale = 0;
         int _dir = pState.lookingRight ? 1 : -1;
         rb.linearVelocity = new Vector2(_dir * dashSpeed, 0);
@@ -280,6 +295,8 @@ public class PlayerController : MonoBehaviour
         {
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
+
+            audioSource.PlayOneShot(dashAndAttackSound);
 
             if (yAxis == 0 || yAxis < 0 && Grounded())
             {
@@ -443,6 +460,7 @@ public class PlayerController : MonoBehaviour
     {
         if (pState.alive)
         {
+            audioSource.PlayOneShot(hurtSound);
             Health -= Mathf.RoundToInt(_damage);
 
             if(Health <= 0)
@@ -607,6 +625,7 @@ public class PlayerController : MonoBehaviour
             if(healTimer >= timeToHeal)
             {
                 Health++;
+                audioSource.PlayOneShot(healSound);
                 healTimer = 0;
             }
 
@@ -658,6 +677,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator CastCoroutine()
     {
+        audioSource.PlayOneShot(spellCastSound);
+
         anim.SetBool("Casting", true);
         yield return new WaitForSeconds(0.15f);
         Mana -= manaSpellCost;
@@ -726,12 +747,14 @@ public class PlayerController : MonoBehaviour
 
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !pState.jumping)
         {
+            audioSource.PlayOneShot(jumpSound);
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
             pState.jumping = true;
         }
         
         if (!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
         {
+            audioSource.PlayOneShot(jumpSound);
             pState.jumping = true;
             airJumpCounter++;
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
@@ -750,12 +773,18 @@ public class PlayerController : MonoBehaviour
     {
         if (Grounded())
         {
+            if (!landingSoundPlayed)
+            {
+                audioSource.PlayOneShot(landingSound);
+                landingSoundPlayed = true;
+            }
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
             airJumpCounter = 0;
         } else
         {
             coyoteTimeCounter -= Time.deltaTime;
+            landingSoundPlayed = false;
         }
 
         if (Input.GetButtonDown("Jump"))

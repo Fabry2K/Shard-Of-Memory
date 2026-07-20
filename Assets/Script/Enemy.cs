@@ -14,12 +14,17 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected GameObject blood;
 
+    [SerializeField] AudioClip hurtSound;
+
+
      float recoilTimer;
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
 
     protected Animator anim;
     protected bool isDead;
+
+    protected AudioSource audioSource;
 
     protected enum EnemyStates
     {
@@ -46,6 +51,7 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         player = PlayerController.Instance;
         anim = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -76,11 +82,13 @@ public class Enemy : MonoBehaviour
 
     public virtual void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
-        health -= _damageDone;
 
+        health -= _damageDone;
+        audioSource.PlayOneShot(hurtSound);
 
         if (!isRecoiling)
         {
+            //audioSource.PlayOneShot(hurtSound);
             rb.linearVelocity = _hitForce * recoilFactor * _hitDirection;
         }
 
