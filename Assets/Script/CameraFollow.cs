@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
+
     [SerializeField] private float followSpeed = 0.1f;
     [SerializeField] private Vector3 offset;
 
