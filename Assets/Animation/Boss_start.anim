@@ -437,6 +437,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.4
+    functionName: PlayRumbleSong
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.3333333
     functionName: SpawnBlackEffect
     data: 
@@ -458,6 +465,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 2.3333333
+    functionName: SpawnBreakEffect
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 8.266666
     functionName: SpawnLinesEffect
     data: 
@@ -467,6 +481,13 @@ AnimationClip:
     messageOptions: 0
   - time: 8.3
     functionName: SpawnCircleEffect
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 8.3
+    functionName: PlayFightSong
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

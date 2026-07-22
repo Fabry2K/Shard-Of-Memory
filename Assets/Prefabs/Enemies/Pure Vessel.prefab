@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1134539405861774397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019656798607967199}
+  m_Layer: 7
+  m_Name: LightSwordEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2019656798607967199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134539405861774397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38, y: -0.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1200237536813906105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7525822147618887493}
+  m_Layer: 7
+  m_Name: BreakEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7525822147618887493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200237536813906105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.69, y: 0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737192553963620648
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,10 +284,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8379992232265407667}
+  - {fileID: 7525822147618887493}
+  - {fileID: 2019656798607967199}
   - {fileID: 7507044396587595510}
   - {fileID: 6625850987208325314}
   - {fileID: 4893301558978388032}
+  - {fileID: 1721281209533541778}
   - {fileID: 1988469277163400208}
+  - {fileID: 5563566223298516873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6289137888280759865
@@ -372,15 +438,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489d938ffb62f4c498437581728e88c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  jumpAttackDetectionBox: {fileID: 8899508272288652025}
   spawnDetectionBox: {fileID: 292438859534644650}
+  breakEffect: {fileID: 7403380575370401683, guid: 37afe0306ad2b2540af989b36e46741c, type: 3}
+  breakEffectPoint: {fileID: 7525822147618887493}
   whiteSpawnEffect: {fileID: 5133106797040404732, guid: e0c29d9343788c44d83046b9bb077271, type: 3}
   whiteSpawnEffectPoint: {fileID: 7507044396587595510}
   blackSpawnEffect: {fileID: 6620536732661285610, guid: 037f4a9a959cd804a88e383c84fe784f, type: 3}
   blackSpawnEffectPoint: {fileID: 8379992232265407667}
-  circleSpawnEffect: {fileID: 0}
-  circleSpawnEffectPoint: {fileID: 0}
-  linesSpawnEffect: {fileID: 0}
-  linesSpawnEffectPoint: {fileID: 0}
+  circleSpawnEffect: {fileID: 7356777084644794719, guid: 3dfb99519e84b42429ad26d520c1cea6, type: 3}
+  circleSpawnEffectPoint: {fileID: 6625850987208325314}
+  linesSpawnEffect: {fileID: 5724119280675704044, guid: c4a17f0aa2eed6c4fa24c71cc0eba49c, type: 3}
+  linesSpawnEffectPoint: {fileID: 4893301558978388032}
+  lightSwordEffect: {fileID: 3204876168523498239, guid: 6968f17e77866414a9a08e68234e7bd9, type: 3}
+  lightSwordEffectPoint: {fileID: 2019656798607967199}
+  groundHitEffect: {fileID: 2717563853542591828, guid: 533a4374f4b28ab4da34ad745a60c14d, type: 3}
+  groundHitEffectPoint: {fileID: 1721281209533541778}
+  fightSong: {fileID: 8300000, guid: f74bcf9fedde66945925a79965689f28, type: 3}
+  rumbleSound: {fileID: 8300000, guid: c9614adeb6205a144ae2f432e5900fbd, type: 3}
+  stompSound: {fileID: 8300000, guid: f36ae6633ceb7904d9abb3178ad233aa, type: 3}
+  breakSound: {fileID: 8300000, guid: 076bbcf704663d748a4a3ee82a4359c8, type: 3}
 --- !u!95 &260454444913368905
 Animator:
   serializedVersion: 7
@@ -427,7 +504,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 858c2c77ad614814691d8d60930f39af, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -512,6 +589,129 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7824504440963582048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5563566223298516873}
+  - component: {fileID: 1553745511834948437}
+  - component: {fileID: 8899508272288652025}
+  m_Layer: 8
+  m_Name: LightSwordAttackTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5563566223298516873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824504440963582048}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1553745511834948437
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824504440963582048}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -1.9630871, y: 2.221054}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.0123024, y: 3.132721}
+  m_EdgeRadius: 0
+--- !u!114 &8899508272288652025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824504440963582048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b153e7d9afa156a4490290015eee07ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectionBox
+  detectedColliders: []
+--- !u!1 &9029632092593947899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1721281209533541778}
+  m_Layer: 7
+  m_Name: GroundHitEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1721281209533541778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029632092593947899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.48, y: -2.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9083869810615909017
 GameObject:
   m_ObjectHideFlags: 0
