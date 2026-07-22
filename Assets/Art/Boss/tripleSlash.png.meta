@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: 3762d874c55871d4b8b9b1b287d99f96
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8438139007668827304
+    second: tripleSlash_0
+  - first:
+      213: 3076517350916562536
+    second: tripleSlash_1
+  - first:
+      213: 1573995839587141450
+    second: tripleSlash_2
+  - first:
+      213: -1756409328064133780
+    second: tripleSlash_3
+  - first:
+      213: 7208604058779347889
+    second: tripleSlash_4
+  - first:
+      213: 5944187583842689366
+    second: tripleSlash_5
+  - first:
+      213: -8978733324911469785
+    second: tripleSlash_6
+  - first:
+      213: 5993822353950765221
+    second: tripleSlash_7
+  - first:
+      213: -2834921342281322140
+    second: tripleSlash_8
+  - first:
+      213: 4524108106396921265
+    second: tripleSlash_9
+  - first:
+      213: -3204022676029400039
+    second: tripleSlash_10
+  - first:
+      213: -5282493879602696525
+    second: tripleSlash_11
+  - first:
+      213: -5524726674149881444
+    second: tripleSlash_12
+  - first:
+      213: 7919860189160489723
+    second: tripleSlash_13
+  - first:
+      213: -5845612073959266600
+    second: tripleSlash_14
+  - first:
+      213: -5051677680665940891
+    second: tripleSlash_15
+  - first:
+      213: -1958120596214635104
+    second: tripleSlash_16
+  - first:
+      213: 4552916895505639328
+    second: tripleSlash_17
+  - first:
+      213: 1301538201297365632
+    second: tripleSlash_18
+  - first:
+      213: -4480912440881626198
+    second: tripleSlash_19
+  - first:
+      213: 6109824359424047334
+    second: tripleSlash_20
+  - first:
+      213: 2710777653959380016
+    second: tripleSlash_21
+  - first:
+      213: -2823019006787546392
+    second: tripleSlash_22
+  - first:
+      213: -7944851126506595389
+    second: tripleSlash_23
+  - first:
+      213: 2961243875032012920
+    second: tripleSlash_24
+  - first:
+      213: 4618422024902807523
+    second: tripleSlash_25
+  - first:
+      213: -5986196042836340086
+    second: tripleSlash_26
+  - first:
+      213: 4310942490752896357
+    second: tripleSlash_27
+  - first:
+      213: -4067824708308866877
+    second: tripleSlash_28
+  - first:
+      213: 2112387237990652763
+    second: tripleSlash_29
+  - first:
+      213: 2554045247705751625
+    second: tripleSlash_30
+  - first:
+      213: -8418590740907582503
+    second: tripleSlash_31
+  - first:
+      213: 138003289333024929
+    second: tripleSlash_32
+  - first:
+      213: 6749269084362360849
+    second: tripleSlash_33
+  - first:
+      213: -7627081818900457611
+    second: tripleSlash_34
+  - first:
+      213: -1808722916116922517
+    second: tripleSlash_35
+  - first:
+      213: 6830948030711595203
+    second: tripleSlash_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tripleSlash_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 5376
+        width: 350
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b488a9745b5ea80800000000000000
+      internalID: -8438139007668827304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 5381
+        width: 503
+        height: 483
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52358305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e15b60b3cf1ba20800000000000000
+      internalID: 3076517350916562536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_2
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 5381
+        width: 464
+        height: 508
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49876967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a47c88070e4f7d510800000000000000
+      internalID: 1573995839587141450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_3
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 5381
+        width: 460
+        height: 476
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53104997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c650e80a50bff97e0800000000000000
+      internalID: -1756409328064133780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_4
+      rect:
+        serializedVersion: 2
+        x: 2538
+        y: 5381
+        width: 475
+        height: 440
+      alignment: 9
+      pivot: {x: 0.5, y: 0.57416326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb6bf9d23b1a0460800000000000000
+      internalID: 7208604058779347889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_5
+      rect:
+        serializedVersion: 2
+        x: 3081
+        y: 5374
+        width: 509
+        height: 435
+      alignment: 9
+      pivot: {x: 0.5, y: 0.59757316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6512b352d1ffd7250800000000000000
+      internalID: 5944187583842689366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_6
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 5381
+        width: 526
+        height: 422
+      alignment: 9
+      pivot: {x: 0.5, y: 0.59775347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b90b3cc91256380800000000000000
+      internalID: -8978733324911469785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_7
+      rect:
+        serializedVersion: 2
+        x: 5039
+        y: 5386
+        width: 900
+        height: 426
+      alignment: 9
+      pivot: {x: 0.5, y: 0.58185357}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0f70e9ca55e2350800000000000000
+      internalID: 5993822353950765221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_10
+      rect:
+        serializedVersion: 2
+        x: 4322
+        y: 5374
+        width: 637
+        height: 331
+      alignment: 9
+      pivot: {x: 0.38276726, y: 0.79955095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c98fe0a560983d0800000000000000
+      internalID: -3204022676029400039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_14
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 4616
+        width: 630
+        height: 390
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6499324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d66ce44ac630eea0800000000000000
+      internalID: -5845612073959266600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_15
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 4608
+        width: 644
+        height: 384
+      alignment: 9
+      pivot: {x: 0.5, y: 0.68316776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c23241ae5d4e9b0800000000000000
+      internalID: -5051677680665940891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_16
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 4614
+        width: 864
+        height: 397
+      alignment: 9
+      pivot: {x: 0.5, y: 0.64245266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5204b31bb53d4e0800000000000000
+      internalID: -1958120596214635104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_17
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 4589
+        width: 642
+        height: 425
+      alignment: 9
+      pivot: {x: 0.650974, y: 0.6576379}
+      border: {x: 0, y: 28, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7ec784bc53f2f30800000000000000
+      internalID: 4552916895505639328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_18
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 4549
+        width: 445
+        height: 689
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46560913}
+      border: {x: 0, y: 77, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a2ee5291eff0210800000000000000
+      internalID: 1301538201297365632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_19
+      rect:
+        serializedVersion: 2
+        x: 3874
+        y: 4637
+        width: 642
+        height: 401
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5354546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa34f9b30e990d1c0800000000000000
+      internalID: -4480912440881626198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_21
+      rect:
+        serializedVersion: 2
+        x: 4620
+        y: 4623
+        width: 378
+        height: 416
+      alignment: 9
+      pivot: {x: 0.5, y: 0.59430754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cc059f9ed9e9520800000000000000
+      internalID: 2710777653959380016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_22
+      rect:
+        serializedVersion: 2
+        x: 5203
+        y: 4623
+        width: 368
+        height: 454
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54423356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2904a9b2f92d8d0800000000000000
+      internalID: -2823019006787546392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_35
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 3907
+        width: 402
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5112058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ffdbf371026e6e0800000000000000
+      internalID: -1808722916116922517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_36
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 3907
+        width: 421
+        height: 502
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5031252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c008b1ca076cce50800000000000000
+      internalID: 6830948030711595203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tripleSlash_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4870
+        width: 6000
+        height: 1130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d4710730cbb16458c76682e091a681
+      internalID: -2834921342281322140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6d7f8a153ac902346ac175b3bd3f0370
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tripleSlash_0: -8438139007668827304
+      tripleSlash_1: 3076517350916562536
+      tripleSlash_10: -3204022676029400039
+      tripleSlash_11: -5282493879602696525
+      tripleSlash_12: -5524726674149881444
+      tripleSlash_13: 7919860189160489723
+      tripleSlash_14: -5845612073959266600
+      tripleSlash_15: -5051677680665940891
+      tripleSlash_16: -1958120596214635104
+      tripleSlash_17: 4552916895505639328
+      tripleSlash_18: 1301538201297365632
+      tripleSlash_19: -4480912440881626198
+      tripleSlash_2: 1573995839587141450
+      tripleSlash_20: 6109824359424047334
+      tripleSlash_21: 2710777653959380016
+      tripleSlash_22: -2823019006787546392
+      tripleSlash_23: -7944851126506595389
+      tripleSlash_24: 2961243875032012920
+      tripleSlash_25: 4618422024902807523
+      tripleSlash_26: -5986196042836340086
+      tripleSlash_27: 4310942490752896357
+      tripleSlash_28: -4067824708308866877
+      tripleSlash_29: 2112387237990652763
+      tripleSlash_3: -1756409328064133780
+      tripleSlash_30: 2554045247705751625
+      tripleSlash_31: -8418590740907582503
+      tripleSlash_32: 138003289333024929
+      tripleSlash_33: 6749269084362360849
+      tripleSlash_34: -7627081818900457611
+      tripleSlash_35: -1808722916116922517
+      tripleSlash_36: 6830948030711595203
+      tripleSlash_4: 7208604058779347889
+      tripleSlash_5: 5944187583842689366
+      tripleSlash_6: -8978733324911469785
+      tripleSlash_7: 5993822353950765221
+      tripleSlash_8: -2834921342281322140
+      tripleSlash_9: 4524108106396921265
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

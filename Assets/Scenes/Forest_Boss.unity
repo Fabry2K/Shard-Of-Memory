@@ -210,98 +210,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &9820568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9820569}
-  - component: {fileID: 9820571}
-  - component: {fileID: 9820570}
-  m_Layer: 8
-  m_Name: LightSwordAttackTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9820569
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9820568}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1220286791}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9820570
+--- !u!114 &9820570 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8899508272288652025, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
+  m_PrefabInstance: {fileID: 5385642520906899643}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9820568}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b153e7d9afa156a4490290015eee07ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectionBox
-  detectedColliders: []
---- !u!61 &9820571
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9820568}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -1.9630871, y: 2.221054}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 4.0123024, y: 3.132721}
-  m_EdgeRadius: 0
 --- !u!1001 &14792219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,11 +771,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!4 &514332349 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6625850987208325314, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-  m_PrefabInstance: {fileID: 5385642520906899643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &677248141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,11 +2097,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!4 &1220286791 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1728717851769284870, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-  m_PrefabInstance: {fileID: 5385642520906899643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252758620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,40 +3013,9 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1679819390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1679819391}
-  m_Layer: 7
-  m_Name: GroundHitEffectPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1679819391
+--- !u!4 &1679819391 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679819390}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -2.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1220286791}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1714268824 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2019656798607967199, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1721281209533541778, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
   m_PrefabInstance: {fileID: 5385642520906899643}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1719779634
@@ -3504,11 +3382,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!4 &1803560327 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4893301558978388032, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-  m_PrefabInstance: {fileID: 5385642520906899643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1884013565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,10 +3940,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1134539405861774397, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: m_Name
-      value: LightSwordEffectPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 1728717851769284870, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.67
@@ -4112,61 +3981,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: fightSong
+      propertyPath: slash1
       value: 
-      objectReference: {fileID: 8300000, guid: f74bcf9fedde66945925a79965689f28, type: 3}
+      objectReference: {fileID: 8300000, guid: 74e7e8cff5be3ef42972cb392346cc95, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: breakSound
+      propertyPath: slash2
       value: 
-      objectReference: {fileID: 8300000, guid: 076bbcf704663d748a4a3ee82a4359c8, type: 3}
+      objectReference: {fileID: 8300000, guid: c240f655b8a6f9143b19d08e9e10c161, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: stompSound
+      propertyPath: slash3
       value: 
-      objectReference: {fileID: 8300000, guid: f36ae6633ceb7904d9abb3178ad233aa, type: 3}
+      objectReference: {fileID: 8300000, guid: 1d12f6eb3d580614fb2cb7f5fba0bcd5, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: breakEffect
       value: 
       objectReference: {fileID: 7403380575370401683, guid: 37afe0306ad2b2540af989b36e46741c, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: rumbleSound
+      propertyPath: groundHitSong
       value: 
-      objectReference: {fileID: 8300000, guid: c9614adeb6205a144ae2f432e5900fbd, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: groundHitEffect
-      value: 
-      objectReference: {fileID: 2717563853542591828, guid: 533a4374f4b28ab4da34ad745a60c14d, type: 3}
+      objectReference: {fileID: 8300000, guid: 0154abacc4c197e4c86f6e5a3d52613a, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: breakEffectPoint
       value: 
       objectReference: {fileID: 1564020152}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: lightSwordEffect
-      value: 
-      objectReference: {fileID: 3204876168523498239, guid: 6968f17e77866414a9a08e68234e7bd9, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: linesSpawnEffect
-      value: 
-      objectReference: {fileID: 5724119280675704044, guid: c4a17f0aa2eed6c4fa24c71cc0eba49c, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: circleSpawnEffect
-      value: 
-      objectReference: {fileID: 7356777084644794719, guid: 3dfb99519e84b42429ad26d520c1cea6, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: groundHitEffectPoint
       value: 
       objectReference: {fileID: 1679819391}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: lightSwordEffectPoint
-      value: 
-      objectReference: {fileID: 1714268824}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: linesSpawnEffectPoint
-      value: 
-      objectReference: {fileID: 1803560327}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: circleSpawnEffectPoint
-      value: 
-      objectReference: {fileID: 514332349}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: jumpAttackDetectionBox
       value: 
@@ -4178,10 +4019,6 @@ PrefabInstance:
     - target: {fileID: 2019656798607967199, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423124745082806317, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7525822147618887493, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4197,13 +4034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1728717851769284870, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1679819391}
-    - targetCorrespondingSourceObject: {fileID: 1728717851769284870, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9820569}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
 --- !u!1660057539 &9223372036854775807

@@ -47,6 +47,10 @@ public class BossController : MonoBehaviour
     [SerializeField] private AudioClip rumbleSound;
     [SerializeField] private AudioClip stompSound;
     [SerializeField] private AudioClip breakSound;
+    [SerializeField] private AudioClip groundHitSong;
+    [SerializeField] private AudioClip slash1;
+    [SerializeField] private AudioClip slash2;
+    [SerializeField] private AudioClip slash3;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -123,7 +127,8 @@ public class BossController : MonoBehaviour
         yield return StartCoroutine(FreezeInAir(0.3f));
 
         // torna giù
-        yield return StartCoroutine(Move(new Vector3(2.5f * facingDirection, -6.5f, 0f), 0.25f));
+        yield return StartCoroutine(Move(new Vector3(2.5f * facingDirection, -7.5f, 0f), 0.25f));
+
     }
 
     private IEnumerator Move(Vector3 offset, float duration)
@@ -214,6 +219,27 @@ public class BossController : MonoBehaviour
     public void PlayBreakSound()
     {
         audioSource.PlayOneShot(breakSound);
+    }
+
+    public void PlayGroundHitSound()
+    {
+        audioSource.PlayOneShot(groundHitSong);
+    }
+
+    public void PlaySlash1Sound()
+    {
+        audioSource.PlayOneShot(slash1);
+    }
+
+
+    public void PlaySlash2Sound()
+    {
+        audioSource.PlayOneShot(slash2);
+    }
+
+    public void PlaySlash3Sound()
+    {
+        audioSource.PlayOneShot(slash3);
     }
 
 
