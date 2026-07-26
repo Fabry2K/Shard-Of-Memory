@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &849929093765634464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6209225941570281982}
+  m_Layer: 7
+  m_Name: VoidAttackEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6209225941570281982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849929093765634464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6, y: -0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134539405861774397
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +119,68 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1, y: 1.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2132538681313180587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5521498993445947269}
+  m_Layer: 7
+  m_Name: DashEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5521498993445947269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132538681313180587}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.51, y: -0.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3349702661423004800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7107389375033514712}
+  m_Layer: 7
+  m_Name: CastEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7107389375033514712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3349702661423004800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.69, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -285,11 +378,14 @@ Transform:
   m_Children:
   - {fileID: 8379992232265407667}
   - {fileID: 7525822147618887493}
+  - {fileID: 7107389375033514712}
   - {fileID: 2019656798607967199}
   - {fileID: 7507044396587595510}
   - {fileID: 6625850987208325314}
   - {fileID: 4893301558978388032}
   - {fileID: 1721281209533541778}
+  - {fileID: 5521498993445947269}
+  - {fileID: 6209225941570281982}
   - {fileID: 1988469277163400208}
   - {fileID: 5563566223298516873}
   m_Father: {fileID: 0}
@@ -448,16 +544,26 @@ MonoBehaviour:
   blackSpawnEffectPoint: {fileID: 8379992232265407667}
   circleSpawnEffect: {fileID: 7356777084644794719, guid: 3dfb99519e84b42429ad26d520c1cea6, type: 3}
   circleSpawnEffectPoint: {fileID: 6625850987208325314}
+  dashEffect: {fileID: 25443670928276016, guid: efc06b4cf3913e14d92e04cea6fc088e, type: 3}
+  dashEffectPoint: {fileID: 5521498993445947269}
   linesSpawnEffect: {fileID: 5724119280675704044, guid: c4a17f0aa2eed6c4fa24c71cc0eba49c, type: 3}
   linesSpawnEffectPoint: {fileID: 4893301558978388032}
   lightSwordEffect: {fileID: 3204876168523498239, guid: 6968f17e77866414a9a08e68234e7bd9, type: 3}
   lightSwordEffectPoint: {fileID: 2019656798607967199}
   groundHitEffect: {fileID: 2717563853542591828, guid: 533a4374f4b28ab4da34ad745a60c14d, type: 3}
   groundHitEffectPoint: {fileID: 1721281209533541778}
+  voidTendrillsEffect: {fileID: 4922199736083984760, guid: 5e96ed9aa07a3934dac0e24f74335a92, type: 3}
+  voidTendrillsEffectPoint: {fileID: 6209225941570281982}
+  castEffect: {fileID: 3693565048102575116, guid: 45f8934e3d3afa641b63ec91d1c43936, type: 3}
+  castEffectPoint: {fileID: 7107389375033514712}
   fightSong: {fileID: 8300000, guid: f74bcf9fedde66945925a79965689f28, type: 3}
   rumbleSound: {fileID: 8300000, guid: c9614adeb6205a144ae2f432e5900fbd, type: 3}
   stompSound: {fileID: 8300000, guid: f36ae6633ceb7904d9abb3178ad233aa, type: 3}
   breakSound: {fileID: 8300000, guid: 076bbcf704663d748a4a3ee82a4359c8, type: 3}
+  groundHitSong: {fileID: 8300000, guid: 0154abacc4c197e4c86f6e5a3d52613a, type: 3}
+  slash1: {fileID: 8300000, guid: 74e7e8cff5be3ef42972cb392346cc95, type: 3}
+  slash2: {fileID: 8300000, guid: c240f655b8a6f9143b19d08e9e10c161, type: 3}
+  slash3: {fileID: 8300000, guid: 1d12f6eb3d580614fb2cb7f5fba0bcd5, type: 3}
 --- !u!95 &260454444913368905
 Animator:
   serializedVersion: 7

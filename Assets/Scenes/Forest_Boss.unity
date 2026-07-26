@@ -210,17 +210,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &9820570 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8899508272288652025, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-  m_PrefabInstance: {fileID: 5385642520906899643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b153e7d9afa156a4490290015eee07ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DetectionBox
 --- !u!1001 &14792219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2826,11 +2815,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!4 &1564020152 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7525822147618887493, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-  m_PrefabInstance: {fileID: 5385642520906899643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1565468883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,11 +2997,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!4 &1679819391 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1721281209533541778, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-  m_PrefabInstance: {fileID: 5385642520906899643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1719779634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,53 +3960,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: slash1
+      propertyPath: castEffect
       value: 
-      objectReference: {fileID: 8300000, guid: 74e7e8cff5be3ef42972cb392346cc95, type: 3}
+      objectReference: {fileID: 3693565048102575116, guid: 45f8934e3d3afa641b63ec91d1c43936, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: slash2
+      propertyPath: castEffectPoint
       value: 
-      objectReference: {fileID: 8300000, guid: c240f655b8a6f9143b19d08e9e10c161, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: slash3
-      value: 
-      objectReference: {fileID: 8300000, guid: 1d12f6eb3d580614fb2cb7f5fba0bcd5, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: breakEffect
-      value: 
-      objectReference: {fileID: 7403380575370401683, guid: 37afe0306ad2b2540af989b36e46741c, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: groundHitSong
-      value: 
-      objectReference: {fileID: 8300000, guid: 0154abacc4c197e4c86f6e5a3d52613a, type: 3}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: breakEffectPoint
-      value: 
-      objectReference: {fileID: 1564020152}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: groundHitEffectPoint
-      value: 
-      objectReference: {fileID: 1679819391}
-    - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: jumpAttackDetectionBox
-      value: 
-      objectReference: {fileID: 9820570}
-    - target: {fileID: 2019656798607967199, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019656798607967199, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 7525822147618887493, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 7525822147618887493, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.58
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5385642520906899644}
     - target: {fileID: 7625766058217781232, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
       propertyPath: m_Name
       value: Pure Vessel
@@ -4037,6 +3976,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
+--- !u!4 &5385642520906899644 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7107389375033514712, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
+  m_PrefabInstance: {fileID: 5385642520906899643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -29,6 +29,9 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject circleSpawnEffect;
     [SerializeField] private Transform circleSpawnEffectPoint;
 
+    [SerializeField] private GameObject dashEffect;
+    [SerializeField] private Transform dashEffectPoint;
+
     [SerializeField] private GameObject linesSpawnEffect;
     [SerializeField] private Transform linesSpawnEffectPoint;
 
@@ -37,6 +40,12 @@ public class BossController : MonoBehaviour
 
     [SerializeField] private GameObject groundHitEffect;
     [SerializeField] private Transform groundHitEffectPoint;
+
+    [SerializeField] private GameObject voidTendrillsEffect;
+    [SerializeField] private Transform voidTendrillsEffectPoint;
+
+    [SerializeField] private GameObject castEffect;
+    [SerializeField] private Transform castEffectPoint;
 
 
 
@@ -190,6 +199,11 @@ public class BossController : MonoBehaviour
         Instantiate(linesSpawnEffect, linesSpawnEffectPoint.position, Quaternion.identity);
     }
 
+    public void SpawnDashEffect()
+    {
+        Instantiate(dashEffect, dashEffectPoint.position, Quaternion.identity);
+    }
+
     public void SpawnLightSwordEffect()
     {
         Instantiate(lightSwordEffect, lightSwordEffectPoint.position, Quaternion.identity);
@@ -198,6 +212,16 @@ public class BossController : MonoBehaviour
     public void SpawnGroundSlashEffect()
     {
         Instantiate(groundHitEffect, groundHitEffectPoint.position, Quaternion.identity);
+    }
+
+    public void SpawnVoidTendrillsEffect()
+    {
+        Instantiate(voidTendrillsEffect, voidTendrillsEffectPoint.position, Quaternion.identity);
+    }
+
+    public void SpawnCastEffect()
+    {
+        Instantiate(castEffect, castEffectPoint.position, Quaternion.identity);
     }
 
 
