@@ -3960,11 +3960,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: castEffect
+      propertyPath: castSmallEffect
       value: 
-      objectReference: {fileID: 3693565048102575116, guid: 45f8934e3d3afa641b63ec91d1c43936, type: 3}
+      objectReference: {fileID: 6623517959126418985, guid: 13c27beb197779b4892dc2a8dc78a31b, type: 3}
     - target: {fileID: 1736673693592176450, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
-      propertyPath: castEffectPoint
+      propertyPath: castSmallEffectPoint
       value: 
       objectReference: {fileID: 5385642520906899644}
     - target: {fileID: 7625766058217781232, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
@@ -3978,7 +3978,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
 --- !u!4 &5385642520906899644 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7107389375033514712, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6876391314004618770, guid: 9806d79698df98446af8118951ce5f9f, type: 3}
   m_PrefabInstance: {fileID: 5385642520906899643}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

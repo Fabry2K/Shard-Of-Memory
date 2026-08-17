@@ -47,6 +47,12 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject castEffect;
     [SerializeField] private Transform castEffectPoint;
 
+    [SerializeField] private GameObject castSmallEffect;
+    [SerializeField] private Transform castSmallEffectPoint;
+
+    [SerializeField] private GameObject bladesEffect;
+    [SerializeField] private Transform bladesEffectPoint;
+
 
 
     [Header("Sounds")]
@@ -223,6 +229,17 @@ public class BossController : MonoBehaviour
     {
         Instantiate(castEffect, castEffectPoint.position, Quaternion.identity);
     }
+
+    public void SpawnCastSmallEffect()
+    {
+        Instantiate(castSmallEffect, castSmallEffectPoint.position, Quaternion.identity);
+    }
+
+    public void SpawnBladesEffect()
+    {
+        Instantiate(bladesEffect, bladesEffectPoint.position, Quaternion.identity);
+    }
+
 
 
     public void PlayFightSong()

@@ -93,6 +93,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1728717851769284870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1634299262485200972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6876391314004618770}
+  m_Layer: 7
+  m_Name: CastSmallEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6876391314004618770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634299262485200972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.69, y: 0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737192553963620648
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +409,9 @@ Transform:
   m_Children:
   - {fileID: 8379992232265407667}
   - {fileID: 7525822147618887493}
+  - {fileID: 4341008493146095383}
   - {fileID: 7107389375033514712}
+  - {fileID: 6876391314004618770}
   - {fileID: 2019656798607967199}
   - {fileID: 7507044396587595510}
   - {fileID: 6625850987208325314}
@@ -556,6 +589,10 @@ MonoBehaviour:
   voidTendrillsEffectPoint: {fileID: 6209225941570281982}
   castEffect: {fileID: 3693565048102575116, guid: 45f8934e3d3afa641b63ec91d1c43936, type: 3}
   castEffectPoint: {fileID: 7107389375033514712}
+  castSmallEffect: {fileID: 6623517959126418985, guid: 13c27beb197779b4892dc2a8dc78a31b, type: 3}
+  castSmallEffectPoint: {fileID: 6876391314004618770}
+  bladesEffect: {fileID: 156216517682634740, guid: 4926731b9b613b44c9b5f7ef8e30ff5d, type: 3}
+  bladesEffectPoint: {fileID: 4341008493146095383}
   fightSong: {fileID: 8300000, guid: f74bcf9fedde66945925a79965689f28, type: 3}
   rumbleSound: {fileID: 8300000, guid: c9614adeb6205a144ae2f432e5900fbd, type: 3}
   stompSound: {fileID: 8300000, guid: f36ae6633ceb7904d9abb3178ad233aa, type: 3}
@@ -787,6 +824,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectionBox
   detectedColliders: []
+--- !u!1 &8316819342376435135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4341008493146095383}
+  m_Layer: 7
+  m_Name: BladesEffectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4341008493146095383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316819342376435135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.45, y: 0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728717851769284870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9029632092593947899
 GameObject:
   m_ObjectHideFlags: 0
