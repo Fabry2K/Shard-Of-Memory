@@ -1,0 +1,512 @@
+fileFormatVersion: 2
+guid: 4a575f319e4a60748a4a43f2b4ec28c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3997488382396984505
+    second: GG_statue_door_0000_2_0
+  - first:
+      213: 6927273039779872011
+    second: GG_statue_door_0000_2_1
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GG_statue_door_0000_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 238
+        height: 648
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7431a7dee711688c0800000000000000
+      internalID: -3997488382396984505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GG_statue_door_0000_2_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 0
+        width: 152
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d383e902e922060800000000000000
+      internalID: 6927273039779872011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices:
+    - {x: 82, y: 13.981996}
+    - {x: 87.198, y: 88.823}
+    - {x: 92.622, y: 152.695}
+    - {x: 101.005, y: 215.141}
+    - {x: 113.494, y: 276.91602}
+    - {x: 132.612, y: 337.489}
+    - {x: 162.15, y: 393.69598}
+    - {x: 204.371, y: 439.991}
+    - {x: 216, y: 449.057}
+    - {x: 221.521, y: 516.78503}
+    - {x: 219.605, y: 543.88}
+    - {x: 224.751, y: 601.751}
+    - {x: 236.67, y: 634.074}
+    - {x: 233.54, y: 645.201}
+    - {x: 230.293, y: 646.657}
+    - {x: 212.963, y: 646.649}
+    - {x: 182.015, y: 622.98303}
+    - {x: 173.269, y: 641.73}
+    - {x: 146.214, y: 640.091}
+    - {x: 123.26, y: 610.60596}
+    - {x: 100, y: 561.093}
+    - {x: 87.251, y: 496.356}
+    - {x: 67.341995, y: 459.518}
+    - {x: 40.440002, y: 398.383}
+    - {x: 23.356003, y: 336.708}
+    - {x: 12.262001, y: 274.502}
+    - {x: 3.4300003, y: 225.904}
+    - {x: 0.42500302, y: 154.265}
+    - {x: 1.4779968, y: 88.784}
+    - {x: 6.439003, y: 28.934998}
+    - {x: 12.375, y: 8.627991}
+    - {x: 19.497002, y: 7.4939885}
+    - {x: 74, y: 7}
+    indices: 000000001d0000000100000000000000200000001d000000010000001b00000002000000010000001c0000001b000000010000001d0000001c000000020000001a00000003000000020000001b0000001a000000030000001900000004000000030000001a0000001900000004000000180000000500000004000000190000001800000005000000170000000600000005000000180000001700000006000000150000000700000006000000160000001500000006000000170000001600000007000000090000000800000007000000150000000900000009000000140000000a0000000900000015000000140000000a000000100000000b0000000a00000013000000100000000a00000014000000130000000b0000000f0000000c0000000b000000100000000f0000000c0000000e0000000d0000000c0000000f0000000e0000001000000012000000110000001000000013000000120000001d0000001f0000001e0000001d000000200000001f000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 32}
+    - {x: 1, y: 2}
+    - {x: 2, y: 3}
+    - {x: 3, y: 4}
+    - {x: 4, y: 5}
+    - {x: 5, y: 6}
+    - {x: 6, y: 7}
+    - {x: 7, y: 8}
+    - {x: 8, y: 9}
+    - {x: 9, y: 10}
+    - {x: 10, y: 11}
+    - {x: 11, y: 12}
+    - {x: 12, y: 13}
+    - {x: 13, y: 14}
+    - {x: 14, y: 15}
+    - {x: 15, y: 16}
+    - {x: 16, y: 17}
+    - {x: 17, y: 18}
+    - {x: 18, y: 19}
+    - {x: 19, y: 20}
+    - {x: 20, y: 21}
+    - {x: 21, y: 22}
+    - {x: 22, y: 23}
+    - {x: 23, y: 24}
+    - {x: 24, y: 25}
+    - {x: 25, y: 26}
+    - {x: 26, y: 27}
+    - {x: 27, y: 28}
+    - {x: 28, y: 29}
+    - {x: 29, y: 30}
+    - {x: 30, y: 31}
+    - {x: 31, y: 32}
+    weights:
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    - 'weight[0]': 1
+      'weight[1]': 0
+      'weight[2]': 0
+      'weight[3]': 0
+      'boneIndex[0]': 0
+      'boneIndex[1]': 0
+      'boneIndex[2]': 0
+      'boneIndex[3]': 0
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GG_statue_door_0000_2_0: -3997488382396984505
+      GG_statue_door_0000_2_1: 6927273039779872011
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

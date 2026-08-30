@@ -8217,7 +8217,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8261,7 +8261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   followSpeed: 0.9
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 1.5, z: -10}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31810,6 +31810,10 @@ PrefabInstance:
     - target: {fileID: 6068762013495284909, guid: 0cb58b6e279d3794ab74b4d30d09c80a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741244739587137919, guid: 0cb58b6e279d3794ab74b4d30d09c80a, type: 3}
+      propertyPath: transitionTo
+      value: Forest_3
       objectReference: {fileID: 0}
     - target: {fileID: 6741244739587137919, guid: 0cb58b6e279d3794ab74b4d30d09c80a, type: 3}
       propertyPath: exitDirection.x
