@@ -155,6 +155,7 @@ MonoBehaviour:
   inRange: 0
   interacted: 0
   interactPrompt: {fileID: 4274856272560718772}
+  restEffectPrefab: {fileID: 6040357841615211977, guid: bba261f117933854c9d84fe71b285477, type: 3}
 --- !u!1 &4274856272560718772
 GameObject:
   m_ObjectHideFlags: 0

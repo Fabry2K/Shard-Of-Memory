@@ -6,6 +6,7 @@ public class Bench : MonoBehaviour
     public bool interacted;
 
     [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private GameObject restEffectPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +20,11 @@ public class Bench : MonoBehaviour
         if (inRange && Input.GetButtonDown("Interact"))
         {
             interacted = true;
+
+            if (restEffectPrefab != null && PlayerController.Instance != null)
+            {
+                Instantiate(restEffectPrefab, PlayerController.Instance.transform.position, Quaternion.identity);
+            }
         }
     }
 
