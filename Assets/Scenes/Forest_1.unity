@@ -31466,9 +31466,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2624289545163179767, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2755528251055049013, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964552889812909271, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4217548558349099994, guid: dc3c9dbca13c1664b972d07aae815e37, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
