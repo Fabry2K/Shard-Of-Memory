@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float fadeTime;
     public bool gameIsPaused;
     public bool hiveKnightDialogueDone;
+    public bool hasKey;
+    public bool forestGateOpened;
 
     public static GameManager Instance { get; private set; }
 

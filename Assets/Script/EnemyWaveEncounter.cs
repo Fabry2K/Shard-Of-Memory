@@ -19,6 +19,10 @@ public class EnemyWaveEncounter : MonoBehaviour
     [SerializeField] private float spawnLeadTime = 0.7f;
     [SerializeField] private float waveClearDelay = 2f;
 
+    [Header("Key Reward")]
+    [SerializeField] private GameObject keyPrefab;
+    [SerializeField] private GameObject keySpawnEffectPrefab;
+
     private AudioSource audioSource;
     private bool hasTriggered;
     private readonly List<GameObject> currentWaveEnemies = new List<GameObject>();
@@ -74,7 +78,24 @@ public class EnemyWaveEncounter : MonoBehaviour
         }));
         yield return StartCoroutine(WaitWaveClear());
 
+        yield return StartCoroutine(SpawnKey(new Vector2(centerX, flyY)));
+
         yield return StartCoroutine(MovePillars(-pillarRiseHeight));
+    }
+
+    private IEnumerator SpawnKey(Vector2 position)
+    {
+        if (keySpawnEffectPrefab != null)
+        {
+            Instantiate(keySpawnEffectPrefab, position, Quaternion.identity);
+        }
+
+        yield return new WaitForSeconds(spawnLeadTime);
+
+        if (keyPrefab != null)
+        {
+            Instantiate(keyPrefab, position, Quaternion.identity);
+        }
     }
 
     private struct SpawnPoint
