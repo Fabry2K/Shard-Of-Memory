@@ -37,6 +37,14 @@ public class Spikes : MonoBehaviour
 
         PlayerController.Instance.TakeDamageNoStop(1);
 
+        if (!PlayerController.Instance.pState.alive)
+        {
+            // Lethal hit: let the normal death sequence (triggered inside TakeDamageNoStop) take over
+            // instead of teleporting the corpse back to the platforming respawn point.
+            PlayerController.Instance.pState.cutScene = false;
+            yield break;
+        }
+
         yield return new WaitForSecondsRealtime(0.1f);
 
         StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.In));

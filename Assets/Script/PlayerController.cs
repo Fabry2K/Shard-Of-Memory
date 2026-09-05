@@ -502,6 +502,12 @@ public class PlayerController : MonoBehaviour
         Destroy(_bloodSpurtParticles, 1.5f);
         anim.SetTrigger("TakeDamage");
         pState.invincible = false;
+
+        if (Health <= 0)
+        {
+            Health = 0;
+            StartCoroutine(Death());
+        }
     }
 
 
