@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FadeUI pauseMenu;
     [SerializeField] private float fadeTime;
     public bool gameIsPaused;
+    public bool hiveKnightDialogueDone;
 
     public static GameManager Instance { get; private set; }
 
