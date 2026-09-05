@@ -25,5 +25,11 @@ public class Fireball : MonoBehaviour
         {
             _other.GetComponent<Enemy>().EnemyHit(damage, (_other.transform.position - transform.position).normalized, -hitForce);
         }
+
+        BreakableObstacle breakable = _other.GetComponent<BreakableObstacle>();
+        if (breakable != null)
+        {
+            breakable.Break();
+        }
     }
 }

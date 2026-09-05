@@ -12734,11 +12734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5726234196873957640, guid: 027c93323741c024d9b43a13d00b5a4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.99
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: 5726234196873957640, guid: 027c93323741c024d9b43a13d00b5a4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -164.56
+      value: -192.08
       objectReference: {fileID: 0}
     - target: {fileID: 5726234196873957640, guid: 027c93323741c024d9b43a13d00b5a4b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13322,6 +13322,7 @@ GameObject:
   - component: {fileID: 773225356}
   - component: {fileID: 773225355}
   - component: {fileID: 773225354}
+  - component: {fileID: 773225359}
   m_Layer: 0
   m_Name: Spike_breakable2
   m_TagString: Death
@@ -13710,7 +13711,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773225353}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -13803,6 +13804,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412922188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -96.137}
+--- !u!114 &773225359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773225353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309f90653f7fff34ca2039d7deb5df15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakableObstacle
+  dissolveDuration: 0.35
 --- !u!1001 &780547916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34023,6 +34037,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 412922188}
     m_Modifications:
+    - target: {fileID: 2217788037640121671, guid: bf5b8a6bb53c2d441913d2f6f3fdf8dc, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5439156610695545238, guid: bf5b8a6bb53c2d441913d2f6f3fdf8dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.757631
@@ -34070,13 +34088,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9069442667108680837, guid: bf5b8a6bb53c2d441913d2f6f3fdf8dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 423808136473497579}
   m_SourcePrefab: {fileID: 100100000, guid: bf5b8a6bb53c2d441913d2f6f3fdf8dc, type: 3}
 --- !u!4 &423808136473497577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5439156610695545238, guid: bf5b8a6bb53c2d441913d2f6f3fdf8dc, type: 3}
   m_PrefabInstance: {fileID: 423808136473497576}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &423808136473497578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9069442667108680837, guid: bf5b8a6bb53c2d441913d2f6f3fdf8dc, type: 3}
+  m_PrefabInstance: {fileID: 423808136473497576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &423808136473497579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423808136473497578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309f90653f7fff34ca2039d7deb5df15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakableObstacle
+  dissolveDuration: 0.35
 --- !u!1001 &3472183570776158804
 PrefabInstance:
   m_ObjectHideFlags: 0
