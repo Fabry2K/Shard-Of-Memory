@@ -105,7 +105,31 @@ public class Skeleton : Enemy
 
                 anim.SetBool("HasTarget", attackZone.detectedColliders.Count > 0);
 
-                rb.linearVelocity = Vector2.zero;
+                if (!canHit && !hitted)
+                {
+                    // Keep closing the gap during the wind-up so backing away doesn't guarantee a free dodge.
+                    float attackDirection = player.transform.position.x - transform.position.x;
+                    if (Mathf.Abs(attackDirection) > 0.05f)
+                    {
+                        if (attackDirection > 0 && transform.localScale.x < 0)
+                        {
+                            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                        }
+                        else if (attackDirection < 0 && transform.localScale.x > 0)
+                        {
+                            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                        }
+                        rb.linearVelocity = new Vector2(Mathf.Sign(attackDirection) * speed * 0.6f, rb.linearVelocity.y);
+                    }
+                    else
+                    {
+                        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                    }
+                }
+                else
+                {
+                    rb.linearVelocity = Vector2.zero;
+                }
 
                 if (canHit && !hitted && anim.GetBool("HasTarget"))
                 {

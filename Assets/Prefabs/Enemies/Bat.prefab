@@ -263,13 +263,14 @@ MonoBehaviour:
   health: 6
   recoilLength: 0.3
   recoilFactor: 0.5
-  isRecoiling: 1
+  isRecoiling: 0
   player: {fileID: 0}
   speed: 15
   damage: 1
   blood: {fileID: 5361335550704233166, guid: a3d9af89b4acb6b4b8b9dd25b64331ba, type: 3}
   hurtSound: {fileID: 8300000, guid: e447d354b9b5e4c48970f6f9d0a4b90f, type: 3}
   chaseDistance: 15
+  loseInterestDistance: 0
 --- !u!95 &7700393052682697152
 Animator:
   serializedVersion: 7
