@@ -21,6 +21,11 @@ public class Bench : MonoBehaviour
         {
             interacted = true;
 
+            if (PlayerController.Instance != null)
+            {
+                PlayerController.Instance.Health = PlayerController.Instance.maxHealth;
+            }
+
             if (restEffectPrefab != null && PlayerController.Instance != null)
             {
                 Instantiate(restEffectPrefab, PlayerController.Instance.transform.position, Quaternion.identity);

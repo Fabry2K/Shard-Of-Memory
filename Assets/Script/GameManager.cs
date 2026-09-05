@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,20 @@ public class GameManager : MonoBehaviour
     public bool hasKey;
     public bool forestGateOpened;
     public bool spellsUnlocked;
+    public List<string> shownTutorials = new List<string>();
+
+    public bool HasShownTutorial(string tutorialId)
+    {
+        return shownTutorials.Contains(tutorialId);
+    }
+
+    public void MarkTutorialShown(string tutorialId)
+    {
+        if (!shownTutorials.Contains(tutorialId))
+        {
+            shownTutorials.Add(tutorialId);
+        }
+    }
 
     public static GameManager Instance { get; private set; }
 
