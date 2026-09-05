@@ -68,6 +68,8 @@ GameObject:
   - component: {fileID: 5682195611466071005}
   - component: {fileID: 4543405962316985922}
   - component: {fileID: 122044794988064224}
+  - component: {fileID: 965947255971994394}
+  - component: {fileID: 553218757814975031}
   m_Layer: 0
   m_Name: void_4
   m_TagString: Untagged
@@ -84,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 5058263294182863800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.755, y: 0, z: 0}
   m_LocalScale: {x: 0.62659997, y: 2.7679446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,6 +185,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e363d1973e77d4982761b99c4f2394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterAnimation
+--- !u!61 &965947255971994394
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058263294182863800}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 4.49}
+    newSize: {x: 2.33, y: 4.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.19, y: 4.49}
+  m_EdgeRadius: 0
+--- !u!114 &553218757814975031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058263294182863800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 1
+  activeDurationOnAwake: 0.43999997
+  activateDelay: 0.29333332
 --- !u!1 &6658532977243839781
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +259,8 @@ GameObject:
   - component: {fileID: 8298659265167165207}
   - component: {fileID: 6021273747036012098}
   - component: {fileID: 463192760001387321}
+  - component: {fileID: 4605941341560188481}
+  - component: {fileID: 3429960397525187515}
   m_Layer: 0
   m_Name: void_2
   m_TagString: Untagged
@@ -211,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 6658532977243839781}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -4.713402, y: 0, z: 0}
+  m_LocalPosition: {x: -1.9584017, y: 0, z: 0}
   m_LocalScale: {x: 0.62659997, y: 0.66839993, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,6 +376,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e363d1973e77d4982761b99c4f2394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterAnimation
+--- !u!61 &4605941341560188481
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658532977243839781}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 4.49}
+    newSize: {x: 2.33, y: 4.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.19, y: 4.49}
+  m_EdgeRadius: 0
+--- !u!114 &3429960397525187515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658532977243839781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 1
+  activeDurationOnAwake: 0.38000003
+  activateDelay: 0.25333336
 --- !u!1 &6857982410390344291
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +450,8 @@ GameObject:
   - component: {fileID: 3574333764311165764}
   - component: {fileID: 3919882090873709616}
   - component: {fileID: 2783857567396043182}
+  - component: {fileID: 8292328609422239210}
+  - component: {fileID: 7441890909073293226}
   m_Layer: 0
   m_Name: void_3
   m_TagString: Untagged
@@ -338,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 6857982410390344291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.8600006, z: 0}
+  m_LocalPosition: {x: 2.755, y: 0.8600006, z: 0}
   m_LocalScale: {x: -0.62659997, y: 2.7679446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,6 +567,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e363d1973e77d4982761b99c4f2394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterAnimation
+--- !u!61 &8292328609422239210
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857982410390344291}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 4.49}
+    newSize: {x: 2.33, y: 4.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.19, y: 4.49}
+  m_EdgeRadius: 0
+--- !u!114 &7441890909073293226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857982410390344291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 1
+  activeDurationOnAwake: 0.43999997
+  activateDelay: 0.29333332
 --- !u!1 &7893705557823847591
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +641,8 @@ GameObject:
   - component: {fileID: 6927061685415017857}
   - component: {fileID: 2138736900633500923}
   - component: {fileID: 4640882691032046272}
+  - component: {fileID: 5194848145177693463}
+  - component: {fileID: 7197131441320913766}
   m_Layer: 0
   m_Name: voidEffect1
   m_TagString: Untagged
@@ -465,7 +659,7 @@ Transform:
   m_GameObject: {fileID: 7893705557823847591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -5.513401, y: 0.56999207, z: 0}
+  m_LocalPosition: {x: -2.758401, y: 0.56999207, z: 0}
   m_LocalScale: {x: 0.77620006, y: 0.77620006, z: 0.7762}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,6 +758,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e363d1973e77d4982761b99c4f2394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterAnimation
+--- !u!61 &5194848145177693463
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893705557823847591}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.0800002, y: 2.7813578}
+    newSize: {x: 3.0800002, y: 2.7813578}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.08, y: 2.78}
+  m_EdgeRadius: 0
+--- !u!114 &7197131441320913766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893705557823847591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 1
+  activeDurationOnAwake: 0.9799998
+  activateDelay: 0.6533332
 --- !u!1 &9004701301464226622
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +832,8 @@ GameObject:
   - component: {fileID: 1119861179868917035}
   - component: {fileID: 3237760267751507928}
   - component: {fileID: 8664051030259741147}
+  - component: {fileID: 553154037557581373}
+  - component: {fileID: 8358245032859129808}
   m_Layer: 0
   m_Name: void_1
   m_TagString: Untagged
@@ -592,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 9004701301464226622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -4.713402, y: 0.8600006, z: 0}
+  m_LocalPosition: {x: -1.9584017, y: 0.8600006, z: 0}
   m_LocalScale: {x: -0.62659997, y: 0.66839993, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -691,3 +949,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e363d1973e77d4982761b99c4f2394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyAfterAnimation
+--- !u!61 &553154037557581373
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004701301464226622}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 4.49}
+    newSize: {x: 2.33, y: 4.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.19, y: 4.49}
+  m_EdgeRadius: 0
+--- !u!114 &8358245032859129808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004701301464226622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 1
+  activeDurationOnAwake: 0.38000003
+  activateDelay: 0.25333336

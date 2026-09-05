@@ -18,6 +18,10 @@ public class SmallRingController : MonoBehaviour
     {
         if (effect2Instance == null)
             effect2Instance = Instantiate(effect2, transform.position, Quaternion.identity);
+
+        // The ring only becomes dangerous once it "explodes" (effect2), not on the initial spawn.
+        var hitbox = GetComponent<BossAttackHitbox>();
+        if (hitbox != null) hitbox.Activate(0.5f);
     }
 
 
