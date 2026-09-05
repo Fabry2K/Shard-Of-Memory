@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class Spikes : MonoBehaviour
 {
+    // Shared across every Spikes instance: prevents a single touch from registering as
+    // multiple hits when the player overlaps two adjacent spike/water colliders at once,
+    // and blocks any further spike damage until the player has actually respawned.
+    private static bool respawnInProgress = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,8 +25,9 @@ public class Spikes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D _other)
     {
-        if (_other.CompareTag("Player"))
+        if (_other.CompareTag("Player") && !respawnInProgress)
         {
+            respawnInProgress = true;
             StartCoroutine(RespawnPoint());
         }
     }
@@ -42,6 +48,7 @@ public class Spikes : MonoBehaviour
             // Lethal hit: let the normal death sequence (triggered inside TakeDamageNoStop) take over
             // instead of teleporting the corpse back to the platforming respawn point.
             PlayerController.Instance.pState.cutScene = false;
+            respawnInProgress = false;
             yield break;
         }
 
@@ -60,5 +67,7 @@ public class Spikes : MonoBehaviour
 
         PlayerController.Instance.pState.cutScene = false;
         PlayerController.Instance.pState.invincible = false;
+
+        respawnInProgress = false;
     }
 }
