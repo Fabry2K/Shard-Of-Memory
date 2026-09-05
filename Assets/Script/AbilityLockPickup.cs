@@ -29,7 +29,7 @@ public class AbilityLockPickup : MonoBehaviour
 
         if (unlockSound != null)
         {
-            AudioSource.PlayClipAtPoint(unlockSound, transform.position);
+            AudioManager.PlayClipAtPoint(unlockSound, transform.position);
         }
 
         if (GameManager.Instance != null) GameManager.Instance.spellsUnlocked = true;

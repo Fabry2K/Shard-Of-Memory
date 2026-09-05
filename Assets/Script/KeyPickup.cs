@@ -29,7 +29,7 @@ public class KeyPickup : MonoBehaviour
 
         if (pickupSound != null)
         {
-            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+            AudioManager.PlayClipAtPoint(pickupSound, transform.position);
         }
 
         if (GameManager.Instance != null) GameManager.Instance.hasKey = true;

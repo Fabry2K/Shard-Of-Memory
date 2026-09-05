@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip spellCastSound;
     [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioClip healSound;
+    [SerializeField] AudioSource footstepAudioSource;
 
 
     public static PlayerController Instance;
@@ -235,7 +236,20 @@ public class PlayerController : MonoBehaviour
             return;
         }
         rb.linearVelocity = new Vector2(walkSpeed * xAxis, rb.linearVelocity.y);
-        anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
+        bool isWalking = rb.linearVelocity.x != 0 && Grounded();
+        anim.SetBool("Walking", isWalking);
+
+        if (footstepAudioSource != null)
+        {
+            if (isWalking && !pState.dashing)
+            {
+                if (!footstepAudioSource.isPlaying) footstepAudioSource.Play();
+            }
+            else if (footstepAudioSource.isPlaying)
+            {
+                footstepAudioSource.Stop();
+            }
+        }
     }
 
     void StartDash()
@@ -823,5 +837,10 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         anim.SetBool("Walking", false);
+
+        if (footstepAudioSource != null && footstepAudioSource.isPlaying)
+        {
+            footstepAudioSource.Stop();
+        }
     }
 }

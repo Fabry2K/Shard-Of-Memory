@@ -25,11 +25,21 @@ public class EnemyWaveEncounter : MonoBehaviour
 
     private AudioSource audioSource;
     private bool hasTriggered;
+    private bool encounterActive;
+    private Coroutine mainCoroutine;
+    private Vector3 pillar1BasePos;
+    private Vector3 pillar2BasePos;
     private readonly List<GameObject> currentWaveEnemies = new List<GameObject>();
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        if (pillar1 != null) pillar1BasePos = pillar1.position;
+        if (pillar2 != null) pillar2BasePos = pillar2.position;
     }
 
     private void OnTriggerEnter2D(Collider2D _collision)
@@ -38,13 +48,14 @@ public class EnemyWaveEncounter : MonoBehaviour
         if (!_collision.CompareTag("Player")) return;
 
         hasTriggered = true;
-        StartCoroutine(RunEncounter());
+        encounterActive = true;
+        mainCoroutine = StartCoroutine(RunEncounter());
+        StartCoroutine(WatchForPlayerDeath());
     }
 
     private IEnumerator RunEncounter()
     {
-        yield return StartCoroutine(MovePillars(pillarRiseHeight));
-        if (audioSource != null && gateSound != null) audioSource.PlayOneShot(gateSound);
+        yield return StartCoroutine(MovePillarsToHeight(pillarRiseHeight));
 
         Bounds b = spawnZone.bounds;
         float groundY = b.min.y + 0.4f;
@@ -80,7 +91,38 @@ public class EnemyWaveEncounter : MonoBehaviour
 
         yield return StartCoroutine(SpawnKey(new Vector2(centerX, flyY)));
 
-        yield return StartCoroutine(MovePillars(-pillarRiseHeight));
+        yield return StartCoroutine(MovePillarsToHeight(0f));
+
+        // Encounter completed successfully: stop watching for death, this arena is done for good.
+        encounterActive = false;
+    }
+
+    // Runs alongside RunEncounter. If the player dies before the encounter finishes,
+    // abort the encounter, clear any surviving enemies, reopen the gate and let the
+    // trigger fire again from scratch - as if the player had never interacted with it.
+    private IEnumerator WatchForPlayerDeath()
+    {
+        while (encounterActive)
+        {
+            if (PlayerController.Instance != null && !PlayerController.Instance.pState.alive)
+            {
+                encounterActive = false;
+
+                if (mainCoroutine != null) StopCoroutine(mainCoroutine);
+
+                foreach (var enemy in currentWaveEnemies)
+                {
+                    if (enemy != null) Destroy(enemy);
+                }
+                currentWaveEnemies.Clear();
+
+                yield return StartCoroutine(MovePillarsToHeight(0f));
+
+                hasTriggered = false;
+                yield break;
+            }
+            yield return null;
+        }
     }
 
     private IEnumerator SpawnKey(Vector2 position)
@@ -136,12 +178,17 @@ public class EnemyWaveEncounter : MonoBehaviour
         yield return new WaitForSeconds(waveClearDelay);
     }
 
-    private IEnumerator MovePillars(float deltaY)
+    // heightOffset is relative to each pillar's original resting position (0 = fully lowered/open,
+    // pillarRiseHeight = fully raised/closed). Using an absolute target instead of a delta from the
+    // pillar's current position means this is safe to call even if a previous move was interrupted partway.
+    private IEnumerator MovePillarsToHeight(float heightOffset)
     {
+        if (audioSource != null && gateSound != null) audioSource.PlayOneShot(gateSound);
+
         Vector3 start1 = pillar1.position;
         Vector3 start2 = pillar2.position;
-        Vector3 end1 = start1 + new Vector3(0f, deltaY, 0f);
-        Vector3 end2 = start2 + new Vector3(0f, deltaY, 0f);
+        Vector3 end1 = pillar1BasePos + new Vector3(0f, heightOffset, 0f);
+        Vector3 end2 = pillar2BasePos + new Vector3(0f, heightOffset, 0f);
 
         float t = 0f;
         while (t < pillarMoveDuration)
