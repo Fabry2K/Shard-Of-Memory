@@ -4,10 +4,13 @@ public class Bench : MonoBehaviour
 {
     public bool inRange;
     public bool interacted;
+
+    [SerializeField] private GameObject interactPrompt;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (interactPrompt != null) interactPrompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,7 +25,11 @@ public class Bench : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D _collision)
     {
-        if (_collision.CompareTag("Player")) inRange = true;
+        if (_collision.CompareTag("Player"))
+        {
+            inRange = true;
+            if (interactPrompt != null) interactPrompt.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D _collision)
@@ -31,6 +38,7 @@ public class Bench : MonoBehaviour
         {
             inRange = false;
             //interacted = false;
+            if (interactPrompt != null) interactPrompt.SetActive(false);
         }
     }
 }
