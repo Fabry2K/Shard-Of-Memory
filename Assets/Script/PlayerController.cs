@@ -660,7 +660,8 @@ public class PlayerController : MonoBehaviour
 
     void CastSpell()
     {
-        if (Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !pState.healing)
+        if (Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !pState.healing
+            && GameManager.Instance != null && GameManager.Instance.spellsUnlocked)
         {
             pState.casting = true;
             timeSinceCast = 0;

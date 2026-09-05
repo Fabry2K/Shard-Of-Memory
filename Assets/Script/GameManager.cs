@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool hiveKnightDialogueDone;
     public bool hasKey;
     public bool forestGateOpened;
+    public bool spellsUnlocked;
 
     public static GameManager Instance { get; private set; }
 
