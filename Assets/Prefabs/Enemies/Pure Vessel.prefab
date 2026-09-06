@@ -342,6 +342,7 @@ MonoBehaviour:
   damage: 1
   activateOnAwake: 0
   activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &6782226693406120219
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +649,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &1736673693592176450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,12 +675,12 @@ MonoBehaviour:
   arenaBounds: {fileID: 0}
   teleportEdgeMargin: 2
   meleeHitbox: {fileID: 7850185392738462446}
-  voidTendrilHitboxPrefab: {fileID: 5491084271210864450, guid: 75fa4e8f421f2c640b31b1f34b6da9d4, type: 3}
   closeRangeDistance: 6
+  meleeApproachDistance: 2.5
   attackRecoveryTime: 0.6
   phase2HealthFraction: 0.5
-  lungeSpeed: 22
-  lungeDuration: 0.35
+  lungeSpeed: 32
+  lungeDuration: 0.38
   attackDamage: 1
   bossHurtSound: {fileID: 8300000, guid: daba135a1bf9bfe4eacd0603cc380990, type: 3}
   breakEffect: {fileID: 7403380575370401683, guid: 37afe0306ad2b2540af989b36e46741c, type: 3}

@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
+        // The bench belongs to a scene, but this manager survives scene loads: the reference
+        // captured in Awake goes stale the moment the player leaves that scene, which silently
+        // sent every later scene (the boss room included) to platformingRespawnPoint instead.
+        if (bench == null) bench = FindAnyObjectByType<Bench>();
+
         if (bench != null) {
             if (bench.interacted)
             {

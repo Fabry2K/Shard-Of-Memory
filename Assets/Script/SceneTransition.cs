@@ -15,6 +15,11 @@ public class SceneTransition : MonoBehaviour
         {
             PlayerController.Instance.transform.position = startPoint.position;
 
+            // Without this the fallback respawn point keeps pointing at coordinates from the
+            // previous scene, which is why dying in a room with no respawn points of its own
+            // (the boss room) dropped the player at an arbitrary spot.
+            GameManager.Instance.platformingRespawnPoint = startPoint.position;
+
             StartCoroutine(PlayerController.Instance.WalkIntoNewScene(exitDirection, exitTime));
         }
         StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.Out));

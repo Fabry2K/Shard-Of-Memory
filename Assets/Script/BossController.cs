@@ -24,6 +24,7 @@ public class BossController : Enemy
 
     [Header("AI Tuning")]
     [SerializeField] private float closeRangeDistance = 6f;
+    [SerializeField] private float meleeApproachDistance = 2.5f;
     [SerializeField] private float attackRecoveryTime = 0.6f;
     [SerializeField] private float phase2HealthFraction = 0.5f;
     [SerializeField] private float lungeSpeed = 22f;
@@ -86,12 +87,21 @@ public class BossController : Enemy
     private AttackType lastAttack;
     private bool hasLastAttack;
     private float maxHealthAtStart;
+    private Vector3 startPosition;
+    private int startFacingDirection;
+    private float startGravityScale;
+    private Color startColor;
 
     protected override void Start()
     {
         base.Start();
         maxHealthAtStart = health;
         facingDirection = transform.localScale.x >= 0 ? 1 : -1;
+        startPosition = transform.position;
+        startFacingDirection = facingDirection;
+        // FreezeInAir zeroes gravity mid jump-attack, so the original value has to be restorable.
+        startGravityScale = rb.gravityScale;
+        startColor = sr.color;
     }
 
     protected override void UpdateEnemyStates()
@@ -115,25 +125,95 @@ public class BossController : Enemy
     public void StartSpawn()
     {
         hasSpawned = true;
+
+        // Boss_start is a 12s entrance cutscene: take the controls away for it, the same way
+        // the Hive Knight dialogue does.
+        if (PlayerController.Instance != null)
+        {
+            PlayerController.Instance.pState.cutScene = true;
+            PlayerController.Instance.ResetInputs();
+        }
+
         anim.SetTrigger("Spawn");
         StartCoroutine(WaitForSpawnThenBeginAI());
+        StartCoroutine(WatchForPlayerDeath());
     }
 
     private IEnumerator WaitForSpawnThenBeginAI()
     {
         // Boss_start is ~12.27s and the Animator already transitions itself to Boss_idle at the end.
         yield return new WaitForSeconds(12.4f);
+
+        if (PlayerController.Instance != null) PlayerController.Instance.pState.cutScene = false;
+
         aiRunning = true;
         StartCoroutine(AttackLoop());
+    }
+
+    // If the player dies mid-fight the whole encounter is wiped and re-armed, so coming back into
+    // the room starts the boss from its entrance again - same contract as the Forest_4 wave arena.
+    private IEnumerator WatchForPlayerDeath()
+    {
+        while (!isDead)
+        {
+            if (PlayerController.Instance != null && !PlayerController.Instance.pState.alive)
+            {
+                ResetFightAfterPlayerDeath();
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    private void ResetFightAfterPlayerDeath()
+    {
+        // Stops the attack loop and whatever attack was mid-flight. The coroutine started below
+        // is unaffected, since it is created after this call.
+        StopAllCoroutines();
+
+        aiRunning = false;
+        hasLastAttack = false;
+        health = maxHealthAtStart;
+
+        // The player may have died during the entrance, with their controls still locked.
+        if (PlayerController.Instance != null) PlayerController.Instance.pState.cutScene = false;
+
+        if (meleeHitbox != null) meleeHitbox.Deactivate();
+        if (audioSource != null) audioSource.Stop();
+
+        transform.position = startPosition;
+        facingDirection = startFacingDirection;
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * facingDirection;
+        transform.localScale = scale;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = startGravityScale;
+
+        // Boss_Teleport fades the sprite out and back in, so dying mid-teleport would otherwise
+        // leave the boss stuck half transparent for the rematch.
+        sr.color = startColor;
+
+        anim.ResetTrigger("Spawn");
+        anim.Play("Boss_base_idle");
+
+        StartCoroutine(RearmWhenPlayerRevives());
+    }
+
+    private IEnumerator RearmWhenPlayerRevives()
+    {
+        yield return new WaitUntil(() => PlayerController.Instance != null && PlayerController.Instance.pState.alive);
+        hasSpawned = false;
     }
 
     private IEnumerator AttackLoop()
     {
         while (aiRunning && health > 0f && !isDead)
         {
-            yield return StartCoroutine(TeleportAndFace());
-
-            AttackType attack = ChooseAttack();
+            // The attack is picked before the teleport, because where the boss should reappear
+            // depends on what it is about to do.
+            AttackType attack = ChooseAttack(true);
+            yield return StartCoroutine(TeleportAndFace(attack));
             yield return StartCoroutine(PerformAttack(attack));
             lastAttack = attack;
             hasLastAttack = true;
@@ -150,7 +230,7 @@ public class BossController : Enemy
             // from where it's standing before teleporting away again - a bit more relentless.
             if (isPhase2 && Random.value < 0.5f && health > 0f && !isDead)
             {
-                AttackType secondAttack = ChooseAttack();
+                AttackType secondAttack = ChooseAttack(false);
                 yield return StartCoroutine(PerformAttack(secondAttack));
                 lastAttack = secondAttack;
 
@@ -162,22 +242,26 @@ public class BossController : Enemy
         }
     }
 
-    private AttackType ChooseAttack()
+    // Every attack is equally likely. Gating the melee attacks behind the current distance meant
+    // they almost never came up, because the boss teleports to an arena edge between attacks and
+    // is therefore nearly always far from the player at the moment of choosing.
+    private AttackType ChooseAttack(bool canReposition)
     {
-        float dist = player != null ? Vector2.Distance(transform.position, player.transform.position) : 999f;
-        List<AttackType> pool = new List<AttackType>();
+        List<AttackType> pool = new List<AttackType>
+        {
+            AttackType.TripleSlash,
+            AttackType.Lunge,
+            AttackType.ShiningDagger,
+            AttackType.LightLancer,
+            AttackType.VoidTendrils,
+            AttackType.Focus,
+        };
 
-        if (dist <= closeRangeDistance)
+        // Triple Slash only reaches straight in front of the boss, so it is only worth picking
+        // when the boss is about to teleport next to the player or is already standing there.
+        if (!canReposition && !PlayerWithinCloseRange())
         {
-            pool.Add(AttackType.TripleSlash);
-            pool.Add(AttackType.Lunge);
-        }
-        else
-        {
-            pool.Add(AttackType.ShiningDagger);
-            pool.Add(AttackType.LightLancer);
-            pool.Add(AttackType.VoidTendrils);
-            pool.Add(AttackType.Focus);
+            pool.Remove(AttackType.TripleSlash);
         }
 
         if (hasLastAttack && pool.Count > 1)
@@ -186,6 +270,12 @@ public class BossController : Enemy
         }
 
         return pool[Random.Range(0, pool.Count)];
+    }
+
+    private bool PlayerWithinCloseRange()
+    {
+        if (player == null) return false;
+        return Vector2.Distance(transform.position, player.transform.position) <= closeRangeDistance;
     }
 
     private IEnumerator PerformAttack(AttackType attack)
@@ -204,7 +294,7 @@ public class BossController : Enemy
     // --- Teleport + turn to face the player (boss_teleport is used to reposition to an edge
     // of the arena, then the boss flips to face the player before picking its next attack) ---
 
-    private IEnumerator TeleportAndFace()
+    private IEnumerator TeleportAndFace(AttackType attack)
     {
         const float teleportClipLength = 0.9333333f;
         const float halfClip = teleportClipLength / 2f;
@@ -214,19 +304,29 @@ public class BossController : Enemy
         // The clip fades the sprite to fully transparent around its midpoint and back in by the
         // end - reposition exactly while invisible so the teleport reads as instantaneous.
         yield return new WaitForSeconds(halfClip);
-        transform.position = ComputeTeleportTarget();
+        transform.position = ComputeTeleportTarget(attack);
         yield return new WaitForSeconds(teleportClipLength - halfClip);
 
         yield return StartCoroutine(FacePlayer());
     }
 
-    private Vector3 ComputeTeleportTarget()
+    private Vector3 ComputeTeleportTarget(AttackType attack)
     {
         if (arenaBounds == null) return transform.position;
 
         Bounds b = arenaBounds.bounds;
         float minX = b.min.x + teleportEdgeMargin;
         float maxX = b.max.x - teleportEdgeMargin;
+
+        // Triple Slash is the one attack that cannot cover any ground of its own, so the boss
+        // arrives right beside the player instead of at an edge. Everything else either travels
+        // (Lunge) or is ranged, and reads better coming from across the arena.
+        if (attack == AttackType.TripleSlash && player != null)
+        {
+            float side = Random.value < 0.5f ? -1f : 1f;
+            float meleeX = Mathf.Clamp(player.transform.position.x + side * meleeApproachDistance, minX, maxX);
+            return new Vector3(meleeX, transform.position.y, transform.position.z);
+        }
 
         bool goLeft = Random.value < 0.5f;
         float x = goLeft ? minX : maxX;
