@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3510825349149665719}
   - component: {fileID: 430190160997292511}
   - component: {fileID: 7380479649412193502}
+  - component: {fileID: 1554165821948969696}
+  - component: {fileID: 1215491772072241060}
   m_Layer: 0
   m_Name: LigthSword (7)
   m_TagString: Untagged
@@ -127,7 +129,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &1554165821948969696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607890422457763379}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &1215491772072241060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607890422457763379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &1726592478921914244
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +203,8 @@ GameObject:
   - component: {fileID: 5621876403194104030}
   - component: {fileID: 7493152411887040367}
   - component: {fileID: 3670555685831571592}
+  - component: {fileID: 4913394047090655040}
+  - component: {fileID: 8808261867407975757}
   m_Layer: 0
   m_Name: LigthSword (5)
   m_TagString: Untagged
@@ -255,7 +320,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &4913394047090655040
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726592478921914244}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &8808261867407975757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726592478921914244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &1772703033067115341
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +394,8 @@ GameObject:
   - component: {fileID: 7819421378638905334}
   - component: {fileID: 2652562908454090457}
   - component: {fileID: 5493046169405574103}
+  - component: {fileID: 1848266901518243354}
+  - component: {fileID: 8770555137465739586}
   m_Layer: 0
   m_Name: LigthSword (3)
   m_TagString: Untagged
@@ -383,7 +511,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &1848266901518243354
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772703033067115341}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &8770555137465739586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772703033067115341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &2324545713497810541
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +585,8 @@ GameObject:
   - component: {fileID: 4379685378222006174}
   - component: {fileID: 1973616622976389244}
   - component: {fileID: 2246313139649753682}
+  - component: {fileID: 8103610952426450091}
+  - component: {fileID: 4181665651162474939}
   m_Layer: 0
   m_Name: LigthSword (4)
   m_TagString: Untagged
@@ -511,7 +702,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &8103610952426450091
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324545713497810541}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &4181665651162474939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324545713497810541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &3011119235990648616
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +776,8 @@ GameObject:
   - component: {fileID: 6112978260531068114}
   - component: {fileID: 6083514265490470139}
   - component: {fileID: 1846506642892160309}
+  - component: {fileID: 2913293779041319847}
+  - component: {fileID: 5474669735925517758}
   m_Layer: 0
   m_Name: LigthSword
   m_TagString: Untagged
@@ -639,7 +893,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &2913293779041319847
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011119235990648616}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &5474669735925517758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011119235990648616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &3204876168523498239
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +1132,8 @@ GameObject:
   - component: {fileID: 4244182020391587563}
   - component: {fileID: 3858760199571505442}
   - component: {fileID: 2274056308397307565}
+  - component: {fileID: 3463468103995531653}
+  - component: {fileID: 7604647058456236871}
   m_Layer: 0
   m_Name: LigthSword (1)
   m_TagString: Untagged
@@ -932,7 +1249,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &3463468103995531653
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4729037783386733933}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &7604647058456236871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4729037783386733933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &6872782204178324364
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +1323,8 @@ GameObject:
   - component: {fileID: 7742518731589166490}
   - component: {fileID: 2626549039650580552}
   - component: {fileID: 2098525793999833284}
+  - component: {fileID: 3810806464312409322}
+  - component: {fileID: 9144765692312042415}
   m_Layer: 0
   m_Name: LigthSword (6)
   m_TagString: Untagged
@@ -1060,7 +1440,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &3810806464312409322
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872782204178324364}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &9144765692312042415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872782204178324364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &7530428744470659112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1514,8 @@ GameObject:
   - component: {fileID: 8164995767154158498}
   - component: {fileID: 5634975316651487784}
   - component: {fileID: 7212696270631237992}
+  - component: {fileID: 6055878297341054644}
+  - component: {fileID: 8987715408799148464}
   m_Layer: 0
   m_Name: LigthSword (2)
   m_TagString: Untagged
@@ -1188,7 +1631,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &6055878297341054644
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530428744470659112}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &8987715408799148464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530428744470659112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0
 --- !u!1 &7889640041735983040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1705,8 @@ GameObject:
   - component: {fileID: 8268968254677284422}
   - component: {fileID: 8718226468162635858}
   - component: {fileID: 6485177836341691890}
+  - component: {fileID: 4342050211497910147}
+  - component: {fileID: 7446799449402321004}
   m_Layer: 0
   m_Name: LigthSword (8)
   m_TagString: Untagged
@@ -1316,4 +1822,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323bab1265388d04685d0f1c7002baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightSword
-  attackDelay: 1
+--- !u!61 &4342050211497910147
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889640041735983040}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 3.55}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.06750251}
+    oldSize: {x: 2.39, y: 5.16}
+    newSize: {x: 1.72, y: 0.69000006}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.7, y: 7.2}
+  m_EdgeRadius: 0
+--- !u!114 &7446799449402321004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889640041735983040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaab957c03721b4f96046dc9c4607fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackHitbox
+  damage: 1
+  activateOnAwake: 0
+  activeDurationOnAwake: 999
+  activateDelay: 0

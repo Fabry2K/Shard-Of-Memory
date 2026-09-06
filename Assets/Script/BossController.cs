@@ -4,13 +4,8 @@ using System.Collections.Generic;
 
 // Pure Vessel boss AI. Inherits Enemy so the existing damage pipelines already used by the
 // player's sword (PlayerController.Hit -> Enemy.EnemyHit) and spells (Fireball -> Enemy.EnemyHit)
-// work against the boss without touching those scripts.
-//
-// Enemy.OnCollisionStay2D (generic body-contact damage) is deliberately hidden below: every
-// hit the boss lands comes from a scripted attack's own BossAttackHitbox instead. Letting the
-// body itself also deal contact damage caused incidental overlaps (e.g. Light Lancer's landing
-// slam) to burn the player's hit-invincibility window a frame before the real attack hitbox
-// (the ground swords) got a chance to register, making that attack seem to deal no damage at all.
+// work against the boss without touching those scripts, and touching the boss's body hurts the
+// player for the whole fight via Enemy.OnCollisionStay2D.
 //
 // None of the boss's animation clips carry root motion or position curves, so every bit of
 // on-screen movement (teleport repositioning, the jump-attack arc, the lunge dash) is driven
@@ -403,11 +398,6 @@ public class BossController : Enemy
     }
 
     // --- Damage taken / death ---
-
-    // Hides Enemy.OnCollisionStay2D: see the class comment above for why the boss's body must
-    // not deal contact damage on its own (Unity resolves magic methods to the most-derived
-    // declaration, same pattern already used by Ghost.cs elsewhere in this project).
-    protected new void OnCollisionStay2D(Collision2D _other) { }
 
     public override void EnemyHit(float _damageDone, Vector2 _hitDirection, float _hitForce)
     {
