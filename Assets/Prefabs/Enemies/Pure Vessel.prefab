@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 849929093765634464}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -0.14, z: 0}
+  m_LocalPosition: {x: 1.0711498, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -676,11 +676,14 @@ MonoBehaviour:
   teleportEdgeMargin: 2
   meleeHitbox: {fileID: 7850185392738462446}
   closeRangeDistance: 6
-  meleeApproachDistance: 2.5
+  meleeApproachDistance: 3.5
   attackRecoveryTime: 0.6
   phase2HealthFraction: 0.5
   lungeSpeed: 32
   lungeDuration: 0.38
+  tripleSlashStep1: 1.5
+  tripleSlashStep2: 0.9
+  tripleSlashStep3: 0.6
   attackDamage: 1
   bossHurtSound: {fileID: 8300000, guid: daba135a1bf9bfe4eacd0603cc380990, type: 3}
   breakEffect: {fileID: 7403380575370401683, guid: 37afe0306ad2b2540af989b36e46741c, type: 3}
@@ -701,6 +704,7 @@ MonoBehaviour:
   groundHitEffectPoint: {fileID: 1721281209533541778}
   voidTendrillsEffect: {fileID: 4922199736083984760, guid: 5e96ed9aa07a3934dac0e24f74335a92, type: 3}
   voidTendrillsEffectPoint: {fileID: 6209225941570281982}
+  voidTendrillsOffset: {x: 3.5, y: -0.5}
   castEffect: {fileID: 3693565048102575116, guid: 45f8934e3d3afa641b63ec91d1c43936, type: 3}
   castEffectPoint: {fileID: 7107389375033514712}
   castSmallEffect: {fileID: 6623517959126418985, guid: 13c27beb197779b4892dc2a8dc78a31b, type: 3}

@@ -29,6 +29,10 @@ public class BossController : Enemy
     [SerializeField] private float phase2HealthFraction = 0.5f;
     [SerializeField] private float lungeSpeed = 22f;
     [SerializeField] private float lungeDuration = 0.35f;
+    [Tooltip("How far the boss carries forward on each of the three slashes - shorter every time.")]
+    [SerializeField] private float tripleSlashStep1 = 1.5f;
+    [SerializeField] private float tripleSlashStep2 = 0.9f;
+    [SerializeField] private float tripleSlashStep3 = 0.6f;
     [SerializeField] private float attackDamage = 1f;
     [SerializeField] private AudioClip bossHurtSound;
 
@@ -59,6 +63,8 @@ public class BossController : Enemy
 
     [SerializeField] private GameObject voidTendrillsEffect;
     [SerializeField] private Transform voidTendrillsEffectPoint;
+    [Tooltip("Nudges where the Void Tendrils effect is centred. X is in the direction the boss is facing (positive = forward), so it stays correct when the boss is mirrored.")]
+    [SerializeField] private Vector2 voidTendrillsOffset = new Vector2(4f, 0f);
 
     [SerializeField] private GameObject castEffect;
     [SerializeField] private Transform castEffectPoint;
@@ -374,8 +380,44 @@ public class BossController : Enemy
 
     private IEnumerator DoTripleSlash()
     {
+        // BossTripleSlash is 41 frames at 30fps. Each slash carries the boss forward over its own
+        // window - frames 12-19, 22-27 and 30-34, which start exactly on the three slash sound
+        // events - with a shorter step each time, so the combo walks into the player instead of
+        // swinging on the spot.
+        const float fps = 30f;
+
         anim.Play("BossTripleSlash");
-        yield return new WaitForSeconds(1.3666667f);
+
+        yield return new WaitForSeconds(12f / fps);
+        yield return StartCoroutine(AdvanceForward(tripleSlashStep1, (19f - 12f) / fps));
+
+        yield return new WaitForSeconds((22f - 19f) / fps);
+        yield return StartCoroutine(AdvanceForward(tripleSlashStep2, (27f - 22f) / fps));
+
+        yield return new WaitForSeconds((30f - 27f) / fps);
+        yield return StartCoroutine(AdvanceForward(tripleSlashStep3, (34f - 30f) / fps));
+
+        yield return new WaitForSeconds((41f - 34f) / fps);
+    }
+
+    // Eases out over the window so the boss leaves with the swing's momentum and settles into the
+    // end of it, rather than sliding forward at a flat speed.
+    private IEnumerator AdvanceForward(float distance, float duration)
+    {
+        Vector3 start = transform.position;
+        Vector3 end = ClampToArena(start + new Vector3(distance * facingDirection, 0f, 0f));
+
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float k = Mathf.Clamp01(t / duration);
+            k = 1f - (1f - k) * (1f - k);
+            transform.position = Vector3.Lerp(start, end, k);
+            yield return null;
+        }
+
+        transform.position = end;
     }
 
     // --- Lunge: a fast forward dash-strike along the ground ---
@@ -599,7 +641,12 @@ public class BossController : Enemy
     {
         // Void_Tendrills.prefab's own children (voidEffect1, void_1..4) each carry their own
         // BossAttackHitbox, self-activating once their own extend animation has played out.
-        SpawnEffectFacingDirection(voidTendrillsEffect, voidTendrillsEffectPoint.position);
+        // The artwork is geometrically centred on its origin, but reads as off-centre because its
+        // mass is spread unevenly, so where it actually looks right is a hand-tuned offset.
+        Vector3 position = voidTendrillsEffectPoint.position
+            + new Vector3(voidTendrillsOffset.x * facingDirection, voidTendrillsOffset.y, 0f);
+
+        SpawnEffectFacingDirection(voidTendrillsEffect, position);
     }
 
     public void SpawnCastEffect()

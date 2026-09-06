@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 5058263294182863800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.755, y: 0, z: 0}
+  m_LocalPosition: {x: 3.105, y: 0, z: 0}
   m_LocalScale: {x: 0.62659997, y: 2.7679446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -219,7 +219,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.41589773, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.19, y: 4.49}
+  m_Size: {x: 2.0217955, y: 4.49}
   m_EdgeRadius: 0
 --- !u!114 &553218757814975031
 MonoBehaviour:
@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 6658532977243839781}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.9584017, y: 0, z: 0}
+  m_LocalPosition: {x: -1.6084017, y: 0, z: 0}
   m_LocalScale: {x: 0.62659997, y: 0.66839993, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -468,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 6857982410390344291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.755, y: 0.8600006, z: 0}
+  m_LocalPosition: {x: 3.105, y: 0.8600006, z: 0}
   m_LocalScale: {x: -0.62659997, y: 2.7679446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -601,7 +601,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.36548364, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -611,7 +611,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.19, y: 4.49}
+  m_Size: {x: 1.9209673, y: 4.49}
   m_EdgeRadius: 0
 --- !u!114 &7441890909073293226
 MonoBehaviour:
@@ -659,7 +659,7 @@ Transform:
   m_GameObject: {fileID: 7893705557823847591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.758401, y: 0.56999207, z: 0}
+  m_LocalPosition: {x: -2.408401, y: 0.56999207, z: 0}
   m_LocalScale: {x: 0.77620006, y: 0.77620006, z: 0.7762}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -850,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 9004701301464226622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.9584017, y: 0.8600006, z: 0}
+  m_LocalPosition: {x: -1.6084017, y: 0.8600006, z: 0}
   m_LocalScale: {x: -0.62659997, y: 0.66839993, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
