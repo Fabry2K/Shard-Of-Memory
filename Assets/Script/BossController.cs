@@ -514,9 +514,13 @@ public class BossController : Enemy
 
     public void SpawnBladesEffect()
     {
-        // This is the Shining Dagger visual (ThrowBladeEffect: 4 blades thrown at different
-        // angles), wired to the boss_throw_blade animation event.
-        SpawnEffectFacingDirection(bladesEffect, bladesEffectPoint.position);
+        // Shining Dagger visual (ThrowBladeEffect: 4 blades at different angles), wired to the
+        // boss_throw_blade animation event. Each blade is spawned unparented and takes its heading
+        // from the spawn point's Transform.rotation, which a mirrored scale never shows up in - so
+        // this effect has to be flipped with a real 180 degree turn, otherwise the blades always
+        // fly right no matter which way the boss is facing.
+        Quaternion facing = facingDirection >= 0 ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
+        Instantiate(bladesEffect, bladesEffectPoint.position, facing);
     }
 
     public void PlayFightSong()
