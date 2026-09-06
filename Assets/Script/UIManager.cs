@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField] GameObject deathScreen;
+    [SerializeField] GameObject victoryScreen;
 
     private void Awake()
     {
@@ -44,5 +45,14 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         deathScreen.SetActive(false);
         StartCoroutine(sceneFader.Fade(SceneFader.FadeDirection.Out));
+    }
+
+    public IEnumerator ActivateVictoryScreen()
+    {
+        yield return new WaitForSeconds(0.8f);
+        StartCoroutine(sceneFader.Fade(SceneFader.FadeDirection.In));
+
+        yield return new WaitForSeconds(0.8f);
+        victoryScreen.SetActive(true);
     }
 }

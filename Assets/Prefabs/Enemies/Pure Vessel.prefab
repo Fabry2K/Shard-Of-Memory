@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489d938ffb62f4c498437581728e88c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  health: 120
+  health: 2
   recoilLength: 0.3
   recoilFactor: 0
   isRecoiling: 0
@@ -674,6 +674,9 @@ MonoBehaviour:
   spawnDetectionBox: {fileID: 292438859534644650}
   arenaBounds: {fileID: 0}
   teleportEdgeMargin: 2
+  arenaGate: {fileID: 0}
+  arenaGateRiseHeight: 4
+  arenaGateMoveDuration: 1.5
   meleeHitbox: {fileID: 7850185392738462446}
   closeRangeDistance: 6
   meleeApproachDistance: 3.5
@@ -719,6 +722,7 @@ MonoBehaviour:
   slash1: {fileID: 8300000, guid: 74e7e8cff5be3ef42972cb392346cc95, type: 3}
   slash2: {fileID: 8300000, guid: c240f655b8a6f9143b19d08e9e10c161, type: 3}
   slash3: {fileID: 8300000, guid: 1d12f6eb3d580614fb2cb7f5fba0bcd5, type: 3}
+  deathScreamSound: {fileID: 8300000, guid: f43b1776bad0f7743bc293898f13eb03, type: 3}
 --- !u!95 &260454444913368905
 Animator:
   serializedVersion: 7

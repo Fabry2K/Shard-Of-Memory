@@ -18,6 +18,10 @@ public class BossController : Enemy
     [Header("Arena")]
     [SerializeField] private Collider2D arenaBounds;
     [SerializeField] private float teleportEdgeMargin = 2f;
+    [Tooltip("Pillar that rises to seal the room while the entrance plays, and drops back down if the player dies.")]
+    [SerializeField] private Transform arenaGate;
+    [SerializeField] private float arenaGateRiseHeight = 4f;
+    [SerializeField] private float arenaGateMoveDuration = 1.5f;
 
     [Header("Attack Hitboxes")]
     [SerializeField] private BossAttackHitbox meleeHitbox;
@@ -84,6 +88,7 @@ public class BossController : Enemy
     [SerializeField] private AudioClip slash1;
     [SerializeField] private AudioClip slash2;
     [SerializeField] private AudioClip slash3;
+    [SerializeField] private AudioClip deathScreamSound;
 
     private enum AttackType { TripleSlash, Lunge, ShiningDagger, LightLancer, VoidTendrils, Focus }
 
@@ -97,6 +102,7 @@ public class BossController : Enemy
     private int startFacingDirection;
     private float startGravityScale;
     private Color startColor;
+    private Vector3 arenaGateBasePosition;
 
     protected override void Start()
     {
@@ -108,6 +114,7 @@ public class BossController : Enemy
         // FreezeInAir zeroes gravity mid jump-attack, so the original value has to be restorable.
         startGravityScale = rb.gravityScale;
         startColor = sr.color;
+        if (arenaGate != null) arenaGateBasePosition = arenaGate.position;
     }
 
     protected override void UpdateEnemyStates()
@@ -143,6 +150,26 @@ public class BossController : Enemy
         anim.SetTrigger("Spawn");
         StartCoroutine(WaitForSpawnThenBeginAI());
         StartCoroutine(WatchForPlayerDeath());
+        if (arenaGate != null) StartCoroutine(CloseArenaGate());
+    }
+
+    // Seals the room behind the player while the entrance plays. Silent on purpose - unlike the
+    // Forest_4 gate, nothing should compete with the boss's own intro audio.
+    private IEnumerator CloseArenaGate()
+    {
+        Vector3 start = arenaGate.position;
+        Vector3 end = arenaGateBasePosition + new Vector3(0f, arenaGateRiseHeight, 0f);
+
+        float t = 0f;
+        while (t < arenaGateMoveDuration)
+        {
+            t += Time.deltaTime;
+            float k = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(t / arenaGateMoveDuration));
+            arenaGate.position = Vector3.Lerp(start, end, k);
+            yield return null;
+        }
+
+        arenaGate.position = end;
     }
 
     private IEnumerator WaitForSpawnThenBeginAI()
@@ -187,28 +214,37 @@ public class BossController : Enemy
         if (meleeHitbox != null) meleeHitbox.Deactivate();
         if (audioSource != null) audioSource.Stop();
 
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = startGravityScale;
+
+        // Boss_Teleport fades the sprite out and back in, so dying mid-teleport would otherwise
+        // leave the boss stuck half transparent.
+        sr.color = startColor;
+
+        // The boss stops attacking but stays exactly where it is: everything that would visibly
+        // jump is deferred to the respawn, behind the death screen.
+        anim.ResetTrigger("Spawn");
+        anim.Play("Boss_idle");
+
+        StartCoroutine(RestoreWhenPlayerRevives());
+    }
+
+    // Runs the moment the player comes back. The death screen is still covering the view at that
+    // point, so putting the boss and the gate back to their starting state is never seen happening.
+    private IEnumerator RestoreWhenPlayerRevives()
+    {
+        yield return new WaitUntil(() => PlayerController.Instance != null && PlayerController.Instance.pState.alive);
+
         transform.position = startPosition;
         facingDirection = startFacingDirection;
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * facingDirection;
         transform.localScale = scale;
 
-        rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = startGravityScale;
+        if (arenaGate != null) arenaGate.position = arenaGateBasePosition;
 
-        // Boss_Teleport fades the sprite out and back in, so dying mid-teleport would otherwise
-        // leave the boss stuck half transparent for the rematch.
-        sr.color = startColor;
-
-        anim.ResetTrigger("Spawn");
         anim.Play("Boss_base_idle");
 
-        StartCoroutine(RearmWhenPlayerRevives());
-    }
-
-    private IEnumerator RearmWhenPlayerRevives()
-    {
-        yield return new WaitUntil(() => PlayerController.Instance != null && PlayerController.Instance.pState.alive);
         hasSpawned = false;
     }
 
@@ -533,6 +569,8 @@ public class BossController : Enemy
     // BossAttackHitbox activates when the orb explodes, not on spawn or generic AoE.
     public void CastFocusBurst()
     {
+        if (isDead) return;
+
         if (castSmallEffect != null && castSmallEffectPoint != null)
         {
             Instantiate(castSmallEffect, castSmallEffectPoint.position, Quaternion.identity);
@@ -562,7 +600,13 @@ public class BossController : Enemy
         aiRunning = false;
         StopAllCoroutines();
 
-        if (meleeHitbox != null) meleeHitbox.Deactivate();
+        // The Animator keeps running whatever attack clip was mid-swing, and its Animation Events
+        // would go on spawning effects and arming hitboxes while the boss dissolves. Dropping it
+        // to idle is what actually stops the attack, not just cancelling the coroutines.
+        anim.ResetTrigger("Spawn");
+        anim.Play("Boss_idle");
+
+        CancelAttacksInFlight();
 
         var col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
@@ -570,26 +614,61 @@ public class BossController : Enemy
 
         if (breakEffect != null && breakEffectPoint != null) Instantiate(breakEffect, breakEffectPoint.position, Quaternion.identity);
         if (audioSource != null && breakSound != null) audioSource.PlayOneShot(breakSound);
+        // Routed through the AudioManager so it survives this object being destroyed.
+        if (deathScreamSound != null) AudioManager.PlayClipAtPoint(deathScreamSound, transform.position);
 
         StartCoroutine(FadeOutAndDestroy());
     }
 
+    // Every damage source the boss has ever spawned carries a BossAttackHitbox, so they are the
+    // complete list of attacks still in the air: blades in flight, light swords, tendrils, rings.
+    private void CancelAttacksInFlight()
+    {
+        foreach (var hitbox in FindObjectsByType<BossAttackHitbox>(FindObjectsSortMode.None))
+        {
+            if (hitbox == null) continue;
+
+            // The boss's own melee hitbox is a child of this object - disarm it, don't destroy it.
+            if (hitbox.transform.IsChildOf(transform))
+            {
+                hitbox.Deactivate();
+                continue;
+            }
+
+            Destroy(hitbox.transform.root.gameObject);
+        }
+    }
+
     private IEnumerator FadeOutAndDestroy()
     {
-        const float duration = 1.2f;
+        const float duration = 3f;
         float t = 0f;
-        Color startColor = sr.color;
+        Color fadeFrom = sr.color;
+
+        // The fight is over, so the player just watches the boss dissolve.
+        if (PlayerController.Instance != null)
+        {
+            PlayerController.Instance.pState.cutScene = true;
+            PlayerController.Instance.ResetInputs();
+        }
 
         while (t < duration)
         {
             t += Time.deltaTime;
-            Color c = startColor;
-            c.a = Mathf.Lerp(startColor.a, 0f, t / duration);
+            Color c = fadeFrom;
+            c.a = Mathf.Lerp(fadeFrom.a, 0f, t / duration);
             sr.color = c;
             yield return null;
         }
 
-        Destroy(gameObject, 0.5f);
+        // Run it on the UIManager, which outlives this object, rather than on a boss that is
+        // about to be destroyed out from under the coroutine.
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.StartCoroutine(UIManager.Instance.ActivateVictoryScreen());
+        }
+
+        Destroy(gameObject, 2f);
     }
 
     // --- Functions called from Animation Events (unchanged names/points from the original script) ---
@@ -626,6 +705,7 @@ public class BossController : Enemy
 
     public void SpawnLightSwordEffect()
     {
+        if (isDead) return;
         Instantiate(lightSwordEffect, lightSwordEffectPoint.position, Quaternion.identity);
     }
 
@@ -639,6 +719,8 @@ public class BossController : Enemy
 
     public void SpawnVoidTendrillsEffect()
     {
+        if (isDead) return;
+
         // Void_Tendrills.prefab's own children (voidEffect1, void_1..4) each carry their own
         // BossAttackHitbox, self-activating once their own extend animation has played out.
         // The artwork is geometrically centred on its origin, but reads as off-centre because its
@@ -661,6 +743,8 @@ public class BossController : Enemy
 
     public void SpawnBladesEffect()
     {
+        if (isDead) return;
+
         // Shining Dagger visual (ThrowBladeEffect: 4 blades at different angles), wired to the
         // boss_throw_blade animation event. Each blade is spawned unparented and takes its heading
         // from the spawn point's Transform.rotation, which a mirrored scale never shows up in - so
@@ -715,7 +799,7 @@ public class BossController : Enemy
 
     private void ActivateMeleeHitboxAt(Transform point)
     {
-        if (meleeHitbox == null) return;
+        if (isDead || meleeHitbox == null) return;
         meleeHitbox.transform.position = point != null ? point.position : transform.position;
         meleeHitbox.SetDamage(attackDamage);
         meleeHitbox.Activate(0.15f);
