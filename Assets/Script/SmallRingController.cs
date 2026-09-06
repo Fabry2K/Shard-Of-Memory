@@ -16,12 +16,10 @@ public class SmallRingController : MonoBehaviour
 
     public void SpawnEffect2()
     {
+        // effect2 (Intern Small Focus Ring) is the burst that hurts, and it carries its own
+        // hitbox - so the damage window lines up with its lifetime for free.
         if (effect2Instance == null)
             effect2Instance = Instantiate(effect2, transform.position, Quaternion.identity);
-
-        // The ring only becomes dangerous once it "explodes" (effect2), not on the initial spawn.
-        var hitbox = GetComponent<BossAttackHitbox>();
-        if (hitbox != null) hitbox.Activate(0.5f);
     }
 
 
