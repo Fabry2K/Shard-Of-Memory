@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -22,7 +23,18 @@ public class SceneTransition : MonoBehaviour
 
             StartCoroutine(PlayerController.Instance.WalkIntoNewScene(exitDirection, exitTime));
         }
-        StartCoroutine(UIManager.Instance.sceneFader.Fade(SceneFader.FadeDirection.Out));
+        StartCoroutine(FadeUpWhenSettled());
+    }
+
+    // The first couple of frames of a fresh scene carry all the Awake/Start work and the shader
+    // warm-up, so they are the janky ones. Letting them go by while the screen is still black
+    // means the fade up starts on a scene that is already running smoothly.
+    private IEnumerator FadeUpWhenSettled()
+    {
+        yield return null;
+        yield return null;
+
+        UIManager.Instance.sceneFader.FadeOut();
     }
 
     private void OnTriggerEnter2D(Collider2D _other)

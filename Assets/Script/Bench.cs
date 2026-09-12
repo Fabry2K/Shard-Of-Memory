@@ -17,7 +17,7 @@ public class Bench : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetButtonDown("Interact"))
+        if (inRange && GameInput.GetButtonDown("Interact"))
         {
             interacted = true;
 

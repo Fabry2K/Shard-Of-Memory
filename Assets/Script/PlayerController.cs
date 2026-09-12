@@ -196,9 +196,9 @@ public class PlayerController : MonoBehaviour
 
     void GetInputs()
     {
-        xAxis = Input.GetAxisRaw("Horizontal");
-        yAxis = Input.GetAxisRaw("Vertical");
-        attack = Input.GetButtonDown("Attack");
+        xAxis = GameInput.GetAxisRaw("Horizontal");
+        yAxis = GameInput.GetAxisRaw("Vertical");
+        attack = GameInput.GetButtonDown("Attack");
     }
 
     private void OnTriggerEnter2D(Collider2D _other)
@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour
 
     void StartDash()
     {
-        if (Input.GetButtonDown("Dash") && canDash && !dashed) 
+        if (GameInput.GetButtonDown("Dash") && canDash && !dashed) 
         {
             StartCoroutine(Dash());
             dashed = true;
@@ -635,7 +635,7 @@ public class PlayerController : MonoBehaviour
     void Heal()
     {
 
-        if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && Grounded() && !pState.dashing)
+        if(GameInput.GetButton("Healing") && Health < maxHealth && Mana > 0 && Grounded() && !pState.dashing)
         {
             pState.healing = true;
             anim.SetBool("Healing", true);
@@ -674,7 +674,7 @@ public class PlayerController : MonoBehaviour
 
     void CastSpell()
     {
-        if (Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !pState.healing
+        if (GameInput.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost && !pState.healing
             && GameManager.Instance != null && GameManager.Instance.spellsUnlocked)
         {
             pState.casting = true;
@@ -773,7 +773,7 @@ public class PlayerController : MonoBehaviour
             pState.jumping = true;
         }
         
-        if (!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+        if (!Grounded() && airJumpCounter < maxAirJumps && GameInput.GetButtonDown("Jump"))
         {
             audioSource.PlayOneShot(jumpSound);
             pState.jumping = true;
@@ -781,7 +781,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 3)
+        if (GameInput.GetButtonUp("Jump") && rb.linearVelocity.y > 3)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             pState.jumping = false;
@@ -808,7 +808,7 @@ public class PlayerController : MonoBehaviour
             landingSoundPlayed = false;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (GameInput.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferFrames;
         } else

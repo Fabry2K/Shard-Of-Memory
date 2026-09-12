@@ -95,7 +95,7 @@ public class HiveKnightDialogue : MonoBehaviour
     {
         dialogueText.text = line;
         yield return null;
-        yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+        yield return new WaitUntil(() => GameInput.GetButtonDown("Interact"));
     }
 
     private void SpawnDebris()
