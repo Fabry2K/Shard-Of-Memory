@@ -37,6 +37,10 @@ public class Skeleton : Enemy
 
     protected override void UpdateEnemyStates()
     {
+        // Staggered: every state below drives rb.linearVelocity, which would cancel the knockback
+        // on the frame it lands. Standing down for recoilLength is what makes the push visible.
+        if (isRecoiling) return;
+
         switch (currentEnemyState)
         {
             case EnemyStates.Skeleton_Walk:

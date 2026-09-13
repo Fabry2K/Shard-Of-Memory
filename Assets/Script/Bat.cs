@@ -34,6 +34,10 @@ public class Bat : Enemy
 
     private void FixedUpdate()
     {
+        // MovePosition overrides the rigidbody outright, so steering while recoiling would erase
+        // the knockback before it moved the bat at all.
+        if (isRecoiling) return;
+
         if (wantsToChase)
         {
             float currentSpeed = hasEngaged ? speed * postEngageSpeedMultiplier : speed;

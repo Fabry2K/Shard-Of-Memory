@@ -90,6 +90,12 @@ public class Enemy : MonoBehaviour
         {
             //audioSource.PlayOneShot(hurtSound);
             rb.linearVelocity = _hitForce * recoilFactor * _hitDirection;
+
+            // Without this the knockback lasted a single frame: every enemy's state machine
+            // rewrites rb.linearVelocity each update, wiping it out immediately. The flag lets
+            // them stand down for recoilLength so the push actually carries.
+            isRecoiling = true;
+            recoilTimer = 0f;
         }
 
         GameObject _blood = Instantiate(blood, transform.position, Quaternion.identity);

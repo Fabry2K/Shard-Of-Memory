@@ -2713,8 +2713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Skeleton
   health: 4
-  recoilLength: 0.5
-  recoilFactor: 5
+  recoilLength: 0.25
+  recoilFactor: 0.6
   isRecoiling: 0
   player: {fileID: 0}
   speed: 4
