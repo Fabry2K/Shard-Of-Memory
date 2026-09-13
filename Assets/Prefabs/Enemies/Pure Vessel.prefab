@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489d938ffb62f4c498437581728e88c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  health: 2
+  health: 50
   recoilLength: 0.3
   recoilFactor: 0
   isRecoiling: 0
