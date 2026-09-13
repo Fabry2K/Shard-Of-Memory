@@ -35,12 +35,20 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.FadeUIIn(fadeTime);
-            Time.timeScale = 0;
-            gameIsPaused = true;
+            PauseGame();
         }
+    }
+
+    // Also called by the on-screen pause button, which is the only way in on a touchscreen.
+    public void PauseGame()
+    {
+        if (gameIsPaused) return;
+
+        pauseMenu.FadeUIIn(fadeTime);
+        Time.timeScale = 0;
+        gameIsPaused = true;
     }
 
     public void UnpauseGame()

@@ -662,7 +662,7 @@ public class BossController : Enemy
     // complete list of attacks still in the air: blades in flight, light swords, tendrils, rings.
     private void CancelAttacksInFlight()
     {
-        foreach (var hitbox in FindObjectsByType<BossAttackHitbox>(FindObjectsSortMode.None))
+        foreach (var hitbox in FindObjectsByType<BossAttackHitbox>(FindObjectsInactive.Exclude))
         {
             if (hitbox == null) continue;
 

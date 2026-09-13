@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 // One on-screen control. It reports held/released rather than clicks, so holding to run or to
 // keep healing behaves exactly like holding the key down.
-[RequireComponent(typeof(Image))]
 public class TouchButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [Tooltip("Inputs this button feeds: Jump, Attack, Dash, Healing, CastSpell, Interact, or one of Left/Right/Up/Down. Usually one, but Up feeds both the axis and Interact - the same way the W key does on a keyboard.")]
@@ -17,8 +16,9 @@ public class TouchButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private float pressedAlpha = 0.9f;
     [SerializeField] private float releasedAlpha = 0.45f;
 
-    private Image background;
-    private Image icon;
+    // Graphic rather than Image, so the backdrop can be the mesh-drawn UICircle.
+    private Graphic background;
+    private Graphic icon;
     private bool appliedLockState;
 
     private bool Locked
@@ -32,8 +32,8 @@ public class TouchButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Awake()
     {
-        background = GetComponent<Image>();
-        if (transform.childCount > 0) icon = transform.GetChild(0).GetComponent<Image>();
+        background = GetComponent<Graphic>();
+        if (transform.childCount > 0) icon = transform.GetChild(0).GetComponent<Graphic>();
 
         appliedLockState = Locked;
         Repaint(releasedAlpha);
