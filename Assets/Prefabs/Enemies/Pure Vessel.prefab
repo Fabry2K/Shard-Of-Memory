@@ -682,6 +682,8 @@ MonoBehaviour:
   meleeApproachDistance: 3.5
   attackRecoveryTime: 0.6
   phase2HealthFraction: 0.5
+  focusUnlockFraction: 0.75
+  voidTendrilsUnlockFraction: 0.5
   lungeSpeed: 32
   lungeDuration: 0.38
   tripleSlashStep1: 1.5
@@ -719,10 +721,17 @@ MonoBehaviour:
   stompSound: {fileID: 8300000, guid: f36ae6633ceb7904d9abb3178ad233aa, type: 3}
   breakSound: {fileID: 8300000, guid: 076bbcf704663d748a4a3ee82a4359c8, type: 3}
   groundHitSong: {fileID: 8300000, guid: 0154abacc4c197e4c86f6e5a3d52613a, type: 3}
-  slash1: {fileID: 8300000, guid: 74e7e8cff5be3ef42972cb392346cc95, type: 3}
-  slash2: {fileID: 8300000, guid: c240f655b8a6f9143b19d08e9e10c161, type: 3}
-  slash3: {fileID: 8300000, guid: 1d12f6eb3d580614fb2cb7f5fba0bcd5, type: 3}
+  slash1: {fileID: 8300000, guid: dbb2a4ebd416b7044bfc28f31e34ca11, type: 3}
+  slash2: {fileID: 8300000, guid: dbb2a4ebd416b7044bfc28f31e34ca11, type: 3}
+  slash3: {fileID: 8300000, guid: dbb2a4ebd416b7044bfc28f31e34ca11, type: 3}
   deathScreamSound: {fileID: 8300000, guid: f43b1776bad0f7743bc293898f13eb03, type: 3}
+  teleportSound: {fileID: 8300000, guid: 0679d0d36fd5a514690d7f38dd05a0c3, type: 3}
+  lungeSound: {fileID: 8300000, guid: c82ce51fe6fd841428c33df6a7d4a35a, type: 3}
+  throwBladeSound: {fileID: 0}
+  voidTendrilsAnticSound: {fileID: 8300000, guid: 07f3631450e79a543b40e0d748a9f1c4, type: 3}
+  voidTendrilsBurstSound: {fileID: 8300000, guid: 9268773efa2d26048b7e70ff0c72d3f9, type: 3}
+  voidTendrilsBurstDelay: 0.25
+  castChargeSound: {fileID: 8300000, guid: f4c8ecd1e4ff7a045b28a56a6db23e92, type: 3}
 --- !u!95 &260454444913368905
 Animator:
   serializedVersion: 7

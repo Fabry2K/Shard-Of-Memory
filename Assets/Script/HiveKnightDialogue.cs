@@ -95,7 +95,21 @@ public class HiveKnightDialogue : MonoBehaviour
     {
         dialogueText.text = line;
         yield return null;
-        yield return new WaitUntil(() => GameInput.GetButtonDown("Interact"));
+        yield return new WaitUntil(AnyInputPressed);
+    }
+
+    // Any key, click or tap moves the dialogue on. anyKeyDown covers keyboard, mouse and pads,
+    // but not a finger on a touchscreen, so touches are checked separately.
+    private static bool AnyInputPressed()
+    {
+        if (Input.anyKeyDown) return true;
+
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            if (Input.GetTouch(i).phase == TouchPhase.Began) return true;
+        }
+
+        return false;
     }
 
     private void SpawnDebris()

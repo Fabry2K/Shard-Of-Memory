@@ -31,6 +31,10 @@ public class BossController : Enemy
     [SerializeField] private float meleeApproachDistance = 2.5f;
     [SerializeField] private float attackRecoveryTime = 0.6f;
     [SerializeField] private float phase2HealthFraction = 0.5f;
+    [Tooltip("Focus only enters the rotation once the boss is at or below this share of its health.")]
+    [SerializeField] private float focusUnlockFraction = 0.75f;
+    [Tooltip("Void Tendrils only enters the rotation once the boss is at or below this share of its health.")]
+    [SerializeField] private float voidTendrilsUnlockFraction = 0.5f;
     [SerializeField] private float lungeSpeed = 22f;
     [SerializeField] private float lungeDuration = 0.35f;
     [Tooltip("How far the boss carries forward on each of the three slashes - shorter every time.")]
@@ -89,6 +93,21 @@ public class BossController : Enemy
     [SerializeField] private AudioClip slash2;
     [SerializeField] private AudioClip slash3;
     [SerializeField] private AudioClip deathScreamSound;
+
+    // Attacks that had no audio of their own. Each is optional: leave a slot empty and that
+    // attack simply stays silent. They all play through this object's AudioSource, which is
+    // routed to the Master mixer group, so the volume slider governs them like every other sound.
+    [Header("Attack Sounds")]
+    [SerializeField] private AudioClip teleportSound;
+    [SerializeField] private AudioClip lungeSound;
+    [SerializeField] private AudioClip throwBladeSound;
+    [Tooltip("Wind-up, played as the boss starts the Void Tendrils animation.")]
+    [SerializeField] private AudioClip voidTendrilsAnticSound;
+    [Tooltip("The tendrils shooting out. Delayed to land on the moment they actually extend.")]
+    [SerializeField] private AudioClip voidTendrilsBurstSound;
+    [SerializeField] private float voidTendrilsBurstDelay = 0.25f;
+    [Tooltip("The focusing hum, played as the Focus animation starts. The rings' own appear/explode sounds live on their prefabs.")]
+    [SerializeField] private AudioClip castChargeSound;
 
     private enum AttackType { TripleSlash, Lunge, ShiningDagger, LightLancer, VoidTendrils, Focus }
 
@@ -306,12 +325,24 @@ public class BossController : Enemy
             pool.Remove(AttackType.TripleSlash);
         }
 
+        // The two heaviest attacks are held back until the fight has worn the boss down, so it
+        // escalates instead of opening with everything it has.
+        float healthFraction = maxHealthAtStart > 0f ? health / maxHealthAtStart : 1f;
+        if (healthFraction > focusUnlockFraction) pool.Remove(AttackType.Focus);
+        if (healthFraction > voidTendrilsUnlockFraction) pool.Remove(AttackType.VoidTendrils);
+
         if (hasLastAttack && pool.Count > 1)
         {
             pool.Remove(lastAttack);
         }
 
         return pool[Random.Range(0, pool.Count)];
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip == null || audioSource == null) return;
+        audioSource.PlayOneShot(clip);
     }
 
     private bool PlayerWithinCloseRange()
@@ -342,6 +373,7 @@ public class BossController : Enemy
         const float halfClip = teleportClipLength / 2f;
 
         anim.Play("Boss_Teleport");
+        PlaySound(teleportSound);
 
         // The clip fades the sprite to fully transparent around its midpoint and back in by the
         // end - reposition exactly while invisible so the teleport reads as instantaneous.
@@ -472,6 +504,10 @@ public class BossController : Enemy
             meleeHitbox.Activate(lungeDuration + 0.1f);
         }
 
+        // Fired here rather than from the SpawnDashEffect animation event, so it lands on the
+        // frame the boss actually starts sliding forward instead of a frame either side of it.
+        PlaySound(lungeSound);
+
         Vector3 start = transform.position;
         Vector3 end = ClampToArena(start + new Vector3(lungeSpeed * lungeDuration * facingDirection, 0f, 0f));
 
@@ -551,6 +587,7 @@ public class BossController : Enemy
     private IEnumerator DoVoidTendrils()
     {
         anim.Play("Boss_void");
+        PlaySound(voidTendrilsAnticSound);
         yield return new WaitForSeconds(1.9666667f);
     }
 
@@ -561,6 +598,7 @@ public class BossController : Enemy
     {
         if (castEffect != null && castEffectPoint != null) Instantiate(castEffect, castEffectPoint.position, Quaternion.identity);
         anim.Play("Boss_cast");
+        PlaySound(castChargeSound);
         yield return new WaitForSeconds(2.1f);
     }
 
@@ -729,6 +767,16 @@ public class BossController : Enemy
             + new Vector3(voidTendrillsOffset.x * facingDirection, voidTendrillsOffset.y, 0f);
 
         SpawnEffectFacingDirection(voidTendrillsEffect, position);
+        StartCoroutine(PlayVoidTendrilsBurst());
+    }
+
+    // The tendrils spawn small and reach out over the first part of their own animation - the
+    // burst has to land on the reach, not on the spawn, which is the same moment their hitboxes
+    // come alive.
+    private IEnumerator PlayVoidTendrilsBurst()
+    {
+        yield return new WaitForSeconds(voidTendrilsBurstDelay);
+        PlaySound(voidTendrilsBurstSound);
     }
 
     public void SpawnCastEffect()
@@ -752,6 +800,7 @@ public class BossController : Enemy
         // fly right no matter which way the boss is facing.
         Quaternion facing = facingDirection >= 0 ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
         Instantiate(bladesEffect, bladesEffectPoint.position, facing);
+        PlaySound(throwBladeSound);
     }
 
     public void PlayFightSong()

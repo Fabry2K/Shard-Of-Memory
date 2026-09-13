@@ -69,3 +69,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   effect1: {fileID: 4074491127197624604, guid: ec371e59b72a8fd4ab108316ff7c4081, type: 3}
   effect2: {fileID: 6732111683935702740, guid: 1fcaedece35be414b8520342ab63d3d9, type: 3}
+  appearSound: {fileID: 8300000, guid: aa0c272376f0c9a4dafbd3c8f95f1de8, type: 3}
+  explodeSound: {fileID: 0}

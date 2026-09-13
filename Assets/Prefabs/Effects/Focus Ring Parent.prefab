@@ -48,6 +48,8 @@ MonoBehaviour:
   effect1: {fileID: 1570156376363411870, guid: 823fb6addf0e1a740ac6e9c9718a4006, type: 3}
   effect2: {fileID: 3049852556897556863, guid: c3b808ce8c75ad54892b0923e71fd59e, type: 3}
   effect3: {fileID: 9013800726251300013, guid: b38f8bf5ff0fb8844992a813db69e849, type: 3}
+  appearSound: {fileID: 8300000, guid: 8e0d117c1e1df454ba096a4ffb74f0c6, type: 3}
+  explodeSound: {fileID: 8300000, guid: c40deee8f31f20a40aa55d9ae0946edd, type: 3}
 --- !u!95 &4206754155131418601
 Animator:
   serializedVersion: 7
